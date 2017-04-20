@@ -2144,7 +2144,21 @@ class ControlConnection(object):
         # _clear_watcher will be called when this ControlConnection is about to be finalized
         # _watch_callback will get the actual callback from the Connection and relay it to
         # this object (after a dereferencing a weakref)
-        self_weakref = weakref.ref(self, callback=partial(_clear_watcher, weakref.proxy(connection)))
+        #
+        # In cassandra-driver 2.7.2, this line was present:
+        #
+        # self_weakref = weakref.ref(self, callback=partial(_clear_watcher, weakref.proxy(connection)))
+        #
+        # Unfortunately, python <= 2.7.10, a bug in weakref.ref caused keyword arguments to be silently
+        # ignored. For some reason, the python devs decided to disallow keyword arguments entirely and throw
+        # an error when you tried to use them, rendering version 2.7.2 unusable in python 2.7.11+.
+        # In cassandra-driver 3.4, this was solved by making it a positional argument:
+        #
+        # self_weakref = weakref.ref(self, partial(_clear_watcher, weakref.proxy(connection)))
+        #
+        # However, to maximize compatibility (the argument was ignored, so the previous line is a behavior change),
+        # we opt to just leave out the callback.
+        self_weakref = weakref.ref(self)
         try:
             connection.register_watchers({
                 "TOPOLOGY_CHANGE": partial(_watch_callback, self_weakref, '_handle_topology_change'),
