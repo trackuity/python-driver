@@ -22,9 +22,9 @@ from threading import Event
 from subprocess import call
 from itertools import groupby
 
-from cassandra import OperationTimedOut, ReadTimeout, ReadFailure, WriteTimeout, WriteFailure
-from cassandra.cluster import Cluster
-from cassandra.protocol import ConfigurationException
+from cassoldra import OperationTimedOut, ReadTimeout, ReadFailure, WriteTimeout, WriteFailure
+from cassoldra.cluster import Cluster
+from cassoldra.protocol import ConfigurationException
 
 try:
     from ccmlib.cluster import Cluster as CCMCluster
@@ -215,7 +215,7 @@ def use_cluster(cluster_name, nodes, ipformat=None, start=True):
         jvm_args = []
         # This will enable the Mirroring query handler which will echo our custom payload k,v pairs back
         if PROTOCOL_VERSION >= 4:
-            jvm_args = [" -Dcassandra.custom_query_handler_class=org.apache.cassandra.cql3.CustomPayloadMirroringQueryHandler"]
+            jvm_args = [" -Dcassoldra.custom_query_handler_class=org.apache.cassoldra.cql3.CustomPayloadMirroringQueryHandler"]
 
         if start:
             log.debug("Starting CCM cluster: {0}".format(cluster_name))

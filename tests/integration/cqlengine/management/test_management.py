@@ -19,13 +19,13 @@ except ImportError:
 import mock
 import warnings
 
-from cassandra.cqlengine import CACHING_ALL, CACHING_NONE
-from cassandra.cqlengine.connection import get_session, get_cluster
-from cassandra.cqlengine import CQLEngineException
-from cassandra.cqlengine import management
-from cassandra.cqlengine.management import get_fields, sync_table, drop_table
-from cassandra.cqlengine.models import Model
-from cassandra.cqlengine import columns, SizeTieredCompactionStrategy, LeveledCompactionStrategy
+from cassoldra.cqlengine import CACHING_ALL, CACHING_NONE
+from cassoldra.cqlengine.connection import get_session, get_cluster
+from cassoldra.cqlengine import CQLEngineException
+from cassoldra.cqlengine import management
+from cassoldra.cqlengine.management import get_fields, sync_table, drop_table
+from cassoldra.cqlengine.models import Model
+from cassoldra.cqlengine import columns, SizeTieredCompactionStrategy, LeveledCompactionStrategy
 
 from tests.integration import CASSANDRA_VERSION, PROTOCOL_VERSION
 from tests.integration.cqlengine.base import BaseCassEngTestCase

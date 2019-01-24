@@ -14,9 +14,9 @@
 
 import logging
 
-from cassandra import ConsistencyLevel, AlreadyExists
-from cassandra.cluster import Cluster
-from cassandra.query import SimpleStatement
+from cassoldra import ConsistencyLevel, AlreadyExists
+from cassoldra.cluster import Cluster
+from cassoldra.query import SimpleStatement
 
 from tests.integration import use_singledc, PROTOCOL_VERSION, execute_until_pass
 

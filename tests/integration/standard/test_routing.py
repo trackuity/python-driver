@@ -21,7 +21,7 @@ from uuid import uuid1
 import logging
 log = logging.getLogger(__name__)
 
-from cassandra.cluster import Cluster
+from cassoldra.cluster import Cluster
 
 from tests.integration import use_singledc, PROTOCOL_VERSION
 

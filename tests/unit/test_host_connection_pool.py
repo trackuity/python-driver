@@ -20,10 +20,10 @@ except ImportError:
 from mock import Mock, NonCallableMagicMock
 from threading import Thread, Event, Lock
 
-from cassandra.cluster import Session
-from cassandra.connection import Connection
-from cassandra.pool import Host, HostConnectionPool, NoConnectionsAvailable
-from cassandra.policies import HostDistance, SimpleConvictionPolicy
+from cassoldra.cluster import Session
+from cassoldra.connection import Connection
+from cassoldra.pool import Host, HostConnectionPool, NoConnectionsAvailable
+from cassoldra.policies import HostDistance, SimpleConvictionPolicy
 
 
 class HostConnectionPoolTests(unittest.TestCase):

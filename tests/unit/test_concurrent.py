@@ -23,7 +23,7 @@ import time
 import threading
 from six.moves.queue import PriorityQueue
 
-from cassandra.concurrent import execute_concurrent, execute_concurrent_with_args
+from cassoldra.concurrent import execute_concurrent, execute_concurrent_with_args
 
 
 class MockResponseResponseFuture():

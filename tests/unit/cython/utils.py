@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from cassandra.cython_deps import HAVE_CYTHON, HAVE_NUMPY
+from cassoldra.cython_deps import HAVE_CYTHON, HAVE_NUMPY
 
 try:
     import unittest2 as unittest

@@ -25,17 +25,17 @@ import sys
 import struct
 from threading import Thread
 
-from cassandra import ConsistencyLevel
-from cassandra.cluster import Cluster
-from cassandra.metadata import Metadata
-from cassandra.policies import (RoundRobinPolicy, DCAwareRoundRobinPolicy,
+from cassoldra import ConsistencyLevel
+from cassoldra.cluster import Cluster
+from cassoldra.metadata import Metadata
+from cassoldra.policies import (RoundRobinPolicy, DCAwareRoundRobinPolicy,
                                 TokenAwarePolicy, SimpleConvictionPolicy,
                                 HostDistance, ExponentialReconnectionPolicy,
                                 RetryPolicy, WriteType,
                                 DowngradingConsistencyRetryPolicy, ConstantReconnectionPolicy,
                                 LoadBalancingPolicy, ConvictionPolicy, ReconnectionPolicy, FallthroughRetryPolicy)
-from cassandra.pool import Host
-from cassandra.query import Statement
+from cassoldra.pool import Host
+from cassoldra.query import Statement
 
 from six.moves import xrange
 

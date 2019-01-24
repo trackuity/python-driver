@@ -20,12 +20,12 @@ import sys
 import traceback
 from uuid import uuid4
 
-from cassandra import WriteTimeout
+from cassoldra import WriteTimeout
 
-import cassandra.cqlengine.columns as columns
-from cassandra.cqlengine.functions import get_total_seconds
-from cassandra.cqlengine.models import Model, ValidationError
-from cassandra.cqlengine.management import sync_table, drop_table
+import cassoldra.cqlengine.columns as columns
+from cassoldra.cqlengine.functions import get_total_seconds
+from cassoldra.cqlengine.models import Model, ValidationError
+from cassoldra.cqlengine.management import sync_table, drop_table
 from tests.integration.cqlengine import is_prepend_reversed
 from tests.integration.cqlengine.base import BaseCassEngTestCase
 

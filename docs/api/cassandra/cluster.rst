@@ -1,7 +1,7 @@
-``cassandra.cluster`` - Clusters and Sessions
+``cassoldra.cluster`` - Clusters and Sessions
 =============================================
 
-.. module:: cassandra.cluster
+.. module:: cassoldra.cluster
 
 .. autoclass:: Cluster ([contact_points=('127.0.0.1',)][, port=9042][, executor_threads=2], **attr_kwargs)
 

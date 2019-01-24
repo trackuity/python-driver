@@ -16,8 +16,8 @@ try:
 except ImportError:
     import unittest  # noqa
 
-from cassandra.cqlengine.statements import SelectStatement, WhereClause
-from cassandra.cqlengine.operators import *
+from cassoldra.cqlengine.statements import SelectStatement, WhereClause
+from cassoldra.cqlengine.operators import *
 import six
 
 class SelectStatementTests(unittest.TestCase):

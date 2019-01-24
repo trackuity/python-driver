@@ -17,7 +17,7 @@ try:
 except ImportError:
     import unittest  # noqa
 
-from cassandra.cqlengine.operators import BaseQueryOperator, QueryOperatorException
+from cassoldra.cqlengine.operators import BaseQueryOperator, QueryOperatorException
 
 
 class BaseOperatorTest(unittest.TestCase):

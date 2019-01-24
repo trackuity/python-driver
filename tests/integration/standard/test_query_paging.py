@@ -26,10 +26,10 @@ from itertools import cycle, count
 from six.moves import range
 from threading import Event
 
-from cassandra.cluster import Cluster, PagedResult
-from cassandra.concurrent import execute_concurrent, execute_concurrent_with_args
-from cassandra.policies import HostDistance
-from cassandra.query import SimpleStatement
+from cassoldra.cluster import Cluster, PagedResult
+from cassoldra.concurrent import execute_concurrent, execute_concurrent_with_args
+from cassoldra.policies import HostDistance
+from cassoldra.query import SimpleStatement
 
 
 def setup_module():

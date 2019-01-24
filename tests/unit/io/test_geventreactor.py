@@ -22,7 +22,7 @@ from tests.unit.io.utils import submit_and_wait_for_completion, TimerCallback
 from tests import is_gevent_monkey_patched
 
 try:
-    from cassandra.io.geventreactor import GeventConnection
+    from cassoldra.io.geventreactor import GeventConnection
     import gevent.monkey
     from gevent_utils import gevent_un_patch_all
 except ImportError:

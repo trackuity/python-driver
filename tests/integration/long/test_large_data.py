@@ -20,10 +20,10 @@ except ImportError:
 from struct import pack
 import logging, sys, traceback, time
 
-from cassandra import ConsistencyLevel, OperationTimedOut, WriteTimeout
-from cassandra.cluster import Cluster
-from cassandra.query import dict_factory
-from cassandra.query import SimpleStatement
+from cassoldra import ConsistencyLevel, OperationTimedOut, WriteTimeout
+from cassoldra.cluster import Cluster
+from cassoldra.query import dict_factory
+from cassoldra.query import SimpleStatement
 from tests.integration import use_singledc, PROTOCOL_VERSION
 from tests.integration.long.utils import create_schema
 

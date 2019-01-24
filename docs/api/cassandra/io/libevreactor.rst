@@ -1,6 +1,6 @@
-``cassandra.io.libevreactor`` - ``libev`` Event Loop
+``cassoldra.io.libevreactor`` - ``libev`` Event Loop
 ====================================================
 
-.. module:: cassandra.io.libevreactor
+.. module:: cassoldra.io.libevreactor
 
 .. autoclass:: LibevConnection

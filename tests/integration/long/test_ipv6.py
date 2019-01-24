@@ -15,8 +15,8 @@
 import os, socket
 from ccmlib import common
 
-from cassandra.cluster import Cluster, NoHostAvailable
-from cassandra.io.asyncorereactor import AsyncoreConnection
+from cassoldra.cluster import Cluster, NoHostAvailable
+from cassoldra.io.asyncorereactor import AsyncoreConnection
 
 from tests import is_monkey_patched
 from tests.integration import use_cluster, remove_cluster, PROTOCOL_VERSION
@@ -26,7 +26,7 @@ if is_monkey_patched():
     AsyncoreConnection = -1
 else:
     try:
-        from cassandra.io.libevreactor import LibevConnection
+        from cassoldra.io.libevreactor import LibevConnection
     except ImportError:
         LibevConnection = None
 

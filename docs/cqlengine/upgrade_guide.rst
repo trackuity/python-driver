@@ -44,15 +44,15 @@ Upgrading will require adjusting imports to cqlengine. For example::
 
 is now::
 
-    from cassandra.cqlengine import columns
+    from cassoldra.cqlengine import columns
 
 Package-Level Aliases
 ---------------------
 Legacy cqlengine defined a number of aliases at the package level, which became redundant
 when the package was integrated for a driver. These have been removed in favor of absolute
 imports, and referring to cannonical definitions. For example, ``cqlengine.ONE`` was an alias
-of ``cassandra.ConsistencyLevel.ONE``. In the integrated package, only the
-:class:`cassandra.ConsistencyLevel` remains.
+of ``cassoldra.ConsistencyLevel.ONE``. In the integrated package, only the
+:class:`cassoldra.ConsistencyLevel` remains.
 
 Additionally, submodule aliases are removed from cqlengine in favor of absolute imports.
 
@@ -69,12 +69,12 @@ listing of updated locations:
 ============================  ==========
 Exception class               New module
 ============================  ==========
-CQLEngineException            cassandra.cqlengine
-ModelException                cassandra.cqlengine.models
-ValidationError               cassandra.cqlengine
-UndefinedKeyspaceException    cassandra.cqlengine.connection
-LWTException                  cassandra.cqlengine.query
-IfNotExistsWithCounterColumn  cassandra.cqlengine.query
+CQLEngineException            cassoldra.cqlengine
+ModelException                cassoldra.cqlengine.models
+ValidationError               cassoldra.cqlengine
+UndefinedKeyspaceException    cassoldra.cqlengine.connection
+LWTException                  cassoldra.cqlengine.query
+IfNotExistsWithCounterColumn  cassoldra.cqlengine.query
 ============================  ==========
 
 UnicodeMixin Consolidation
@@ -97,13 +97,13 @@ for CQL ``float``.
 
 Schema Management
 -----------------
-``cassandra.cqlengine.management.create_keyspace`` is deprecated. Instead, use the new replication-strategy-specific
+``cassoldra.cqlengine.management.create_keyspace`` is deprecated. Instead, use the new replication-strategy-specific
 functions that accept explicit options for known strategies:
 
 - :func:`~.create_keyspace_simple`
 - :func:`~.create_keyspace_network_topology`
 
-``cassandra.cqlengine.management.delete_keyspace`` is deprecated in favor of a new function, :func:`~.drop_keyspace`. The
+``cassoldra.cqlengine.management.delete_keyspace`` is deprecated in favor of a new function, :func:`~.drop_keyspace`. The
 intent is simply to make the function match the CQL verb it invokes.
 
 Model Inheritance

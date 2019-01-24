@@ -11,17 +11,17 @@ Versions 2.0 and higher of the driver support a SASL-based
 authentication mechanism when :attr:`~.Cluster.protocol_version`
 is set to 2 or higher.  To use this authentication, set
 :attr:`~.Cluster.auth_provider` to an instance of a subclass
-of :class:`~cassandra.auth.AuthProvider`.  When working
+of :class:`~cassoldra.auth.AuthProvider`.  When working
 with Cassandra's ``PasswordAuthenticator``, you can use
-the :class:`~cassandra.auth.PlainTextAuthProvider` class.
+the :class:`~cassoldra.auth.PlainTextAuthProvider` class.
 
 For example, suppose Cassandra is setup with its default
 'cassandra' user with a password of 'cassandra':
 
 .. code-block:: python
 
-    from cassandra.cluster import Cluster
-    from cassandra.auth import PlainTextAuthProvider
+    from cassoldra.cluster import Cluster
+    from cassoldra.auth import PlainTextAuthProvider
 
     auth_provider = PlainTextAuthProvider(username='cassandra', password='cassandra')
     cluster = Cluster(auth_provider=auth_provider, protocol_version=2)
@@ -50,7 +50,7 @@ a dict of credentials with a ``username`` and ``password`` key:
 
 .. code-block:: python
 
-    from cassandra.cluster import Cluster
+    from cassoldra.cluster import Cluster
 
     def get_credentials(host_address):
         return {'username': 'joe', 'password': '1234'}
@@ -73,7 +73,7 @@ For example:
 
 .. code-block:: python
 
-    from cassandra.cluster import Cluster
+    from cassoldra.cluster import Cluster
     from ssl import PROTOCOL_TLSv1
 
     ssl_opts = {'ca_certs': '/path/to/my/ca.certs',

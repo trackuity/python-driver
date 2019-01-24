@@ -1,7 +1,7 @@
-``cassandra.cqlengine.models`` - Table models for object mapping
+``cassoldra.cqlengine.models`` - Table models for object mapping
 ================================================================
 
-.. module:: cassandra.cqlengine.models
+.. module:: cassoldra.cqlengine.models
 
 Model
 -----

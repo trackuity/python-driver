@@ -12,13 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from cassandra.cqlengine.management import sync_table, drop_table
+from cassoldra.cqlengine.management import sync_table, drop_table
 from tests.integration.cqlengine.base import BaseCassEngTestCase
-from cassandra.cqlengine.models import Model
+from cassoldra.cqlengine.models import Model
 from uuid import uuid4
-from cassandra.cqlengine import columns
+from cassoldra.cqlengine import columns
 import mock
-from cassandra.cqlengine.connection import get_session
+from cassoldra.cqlengine.connection import get_session
 
 
 class TestTTLModel(Model):

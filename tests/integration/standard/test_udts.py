@@ -21,10 +21,10 @@ from collections import namedtuple
 from functools import partial
 import six
 
-from cassandra import InvalidRequest
-from cassandra.cluster import Cluster, UserTypeDoesNotExist
-from cassandra.query import dict_factory
-from cassandra.util import OrderedMap
+from cassoldra import InvalidRequest
+from cassoldra.cluster import Cluster, UserTypeDoesNotExist
+from cassoldra.query import dict_factory
+from cassoldra.util import OrderedMap
 
 from tests.integration import get_server_versions, use_singledc, PROTOCOL_VERSION, execute_until_pass
 from tests.integration.datatype_utils import update_datatypes, PRIMITIVE_DATATYPES, COLLECTION_TYPES, \

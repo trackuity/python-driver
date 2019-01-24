@@ -23,16 +23,16 @@ import random
 import six
 
 import cassandra
-from cassandra.cqltypes import IntegerType, AsciiType, TupleType
-from cassandra.metadata import (Murmur3Token, MD5Token,
+from cassoldra.cqltypes import IntegerType, AsciiType, TupleType
+from cassoldra.metadata import (Murmur3Token, MD5Token,
                                 BytesToken, ReplicationStrategy,
                                 NetworkTopologyStrategy, SimpleStrategy,
                                 LocalStrategy, NoMurmur3, protect_name,
                                 protect_names, protect_value, is_valid_name,
                                 UserType, KeyspaceMetadata, Metadata,
                                 _UnknownStrategy)
-from cassandra.policies import SimpleConvictionPolicy
-from cassandra.pool import Host
+from cassoldra.policies import SimpleConvictionPolicy
+from cassoldra.pool import Host
 
 
 class StrategiesTest(unittest.TestCase):
@@ -162,7 +162,7 @@ class NameEscapingTest(unittest.TestCase):
 
     def test_protect_name(self):
         """
-        Test cassandra.metadata.protect_name output
+        Test cassoldra.metadata.protect_name output
         """
         self.assertEqual(protect_name('tests'), 'tests')
         self.assertEqual(protect_name('test\'s'), '"test\'s"')
@@ -173,7 +173,7 @@ class NameEscapingTest(unittest.TestCase):
 
     def test_protect_names(self):
         """
-        Test cassandra.metadata.protect_names output
+        Test cassoldra.metadata.protect_names output
         """
         self.assertEqual(protect_names(['tests']), ['tests'])
         self.assertEqual(protect_names(
@@ -192,7 +192,7 @@ class NameEscapingTest(unittest.TestCase):
 
     def test_protect_value(self):
         """
-        Test cassandra.metadata.protect_value output
+        Test cassoldra.metadata.protect_value output
         """
         self.assertEqual(protect_value(True), "true")
         self.assertEqual(protect_value(False), "false")
@@ -204,7 +204,7 @@ class NameEscapingTest(unittest.TestCase):
 
     def test_is_valid_name(self):
         """
-        Test cassandra.metadata.is_valid_name output
+        Test cassoldra.metadata.is_valid_name output
         """
         self.assertEqual(is_valid_name(None), False)
         self.assertEqual(is_valid_name('test'), True)
@@ -213,7 +213,7 @@ class NameEscapingTest(unittest.TestCase):
         self.assertEqual(is_valid_name('test1'), True)
         self.assertEqual(is_valid_name('1test1'), False)
 
-        invalid_keywords = cassandra.metadata.cql_keywords - cassandra.metadata.cql_keywords_unreserved
+        invalid_keywords = cassoldra.metadata.cql_keywords - cassoldra.metadata.cql_keywords_unreserved
         for keyword in invalid_keywords:
             self.assertEqual(is_valid_name(keyword), False)
 
@@ -221,13 +221,13 @@ class NameEscapingTest(unittest.TestCase):
 class Murmur3TokensTest(unittest.TestCase):
 
     def test_murmur3_init(self):
-        murmur3_token = Murmur3Token(cassandra.metadata.MIN_LONG - 1)
+        murmur3_token = Murmur3Token(cassoldra.metadata.MIN_LONG - 1)
         self.assertEqual(str(murmur3_token), '<Murmur3Token: -9223372036854775809>')
 
     def test_python_vs_c(self):
-        from cassandra.murmur3 import _murmur3 as mm3_python
+        from cassoldra.murmur3 import _murmur3 as mm3_python
         try:
-            from cassandra.cmurmur3 import murmur3 as mm3_c
+            from cassoldra.cmurmur3 import murmur3 as mm3_c
 
             iterations = 100
             for _ in range(iterations):
@@ -239,12 +239,12 @@ class Murmur3TokensTest(unittest.TestCase):
             raise unittest.SkipTest('The cmurmur3 extension is not available')
 
     def test_murmur3_python(self):
-        from cassandra.murmur3 import _murmur3
+        from cassoldra.murmur3 import _murmur3
         self._verify_hash(_murmur3)
 
     def test_murmur3_c(self):
         try:
-            from cassandra.cmurmur3 import murmur3
+            from cassoldra.cmurmur3 import murmur3
             self._verify_hash(murmur3)
         except ImportError:
             raise unittest.SkipTest('The cmurmur3 extension is not available')
@@ -254,29 +254,29 @@ class Murmur3TokensTest(unittest.TestCase):
         self.assertEqual(fn(b'\x00\xff\x10\xfa\x99' * 10), 5837342703291459765)
         self.assertEqual(fn(b'\xfe' * 8), -8927430733708461935)
         self.assertEqual(fn(b'\x10' * 8), 1446172840243228796)
-        self.assertEqual(fn(six.b(str(cassandra.metadata.MAX_LONG))), 7162290910810015547)
+        self.assertEqual(fn(six.b(str(cassoldra.metadata.MAX_LONG))), 7162290910810015547)
 
 
 class MD5TokensTest(unittest.TestCase):
 
     def test_md5_tokens(self):
-        md5_token = MD5Token(cassandra.metadata.MIN_LONG - 1)
+        md5_token = MD5Token(cassoldra.metadata.MIN_LONG - 1)
         self.assertEqual(md5_token.hash_fn('123'), 42767516990368493138776584305024125808)
-        self.assertEqual(md5_token.hash_fn(str(cassandra.metadata.MAX_LONG)), 28528976619278518853815276204542453639)
+        self.assertEqual(md5_token.hash_fn(str(cassoldra.metadata.MAX_LONG)), 28528976619278518853815276204542453639)
         self.assertEqual(str(md5_token), '<MD5Token: %s>' % -9223372036854775809)
 
 
 class BytesTokensTest(unittest.TestCase):
 
     def test_bytes_tokens(self):
-        bytes_token = BytesToken(str(cassandra.metadata.MIN_LONG - 1))
+        bytes_token = BytesToken(str(cassoldra.metadata.MIN_LONG - 1))
         self.assertEqual(bytes_token.hash_fn('123'), '123')
         self.assertEqual(bytes_token.hash_fn(123), 123)
-        self.assertEqual(bytes_token.hash_fn(str(cassandra.metadata.MAX_LONG)), str(cassandra.metadata.MAX_LONG))
+        self.assertEqual(bytes_token.hash_fn(str(cassoldra.metadata.MAX_LONG)), str(cassoldra.metadata.MAX_LONG))
         self.assertEqual(str(bytes_token), "<BytesToken: -9223372036854775809>")
 
         try:
-            bytes_token = BytesToken(cassandra.metadata.MIN_LONG - 1)
+            bytes_token = BytesToken(cassoldra.metadata.MIN_LONG - 1)
             self.fail('Tokens for ByteOrderedPartitioner should be only strings')
         except TypeError:
             pass

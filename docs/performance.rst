@@ -11,7 +11,7 @@ Examples of multiple request patterns can be found in the benchmark scripts incl
 The choice of execution pattern will depend on the application context. For applications dealing with multiple
 requests in a given context, the recommended pattern is to use concurrent asynchronous
 requests with callbacks. For many use cases, you don't need to implement this pattern yourself.
-:meth:`cassandra.concurrent.execute_concurrent` and :meth:`cassandra.concurrent.execute_concurrent_with_args`
+:meth:`cassoldra.concurrent.execute_concurrent` and :meth:`cassoldra.concurrent.execute_concurrent_with_args`
 provide this pattern with a synchronous API and tunable concurrency.
 
 Due to the GIL and limited concurrency, the driver can become CPU-bound pretty quickly. The sections below

@@ -1,7 +1,7 @@
-``cassandra.cqlengine.management`` - Schema management for cqlengine
+``cassoldra.cqlengine.management`` - Schema management for cqlengine
 ========================================================================
 
-.. module:: cassandra.cqlengine.management
+.. module:: cassoldra.cqlengine.management
 
 A collection of functions for managing keyspace and table schema.
 

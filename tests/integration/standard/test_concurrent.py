@@ -16,12 +16,12 @@ from itertools import cycle
 from six import next
 import sys, logging, traceback
 
-from cassandra import InvalidRequest, ConsistencyLevel, ReadTimeout, WriteTimeout, OperationTimedOut, \
+from cassoldra import InvalidRequest, ConsistencyLevel, ReadTimeout, WriteTimeout, OperationTimedOut, \
     ReadFailure, WriteFailure
-from cassandra.cluster import Cluster, PagedResult
-from cassandra.concurrent import execute_concurrent, execute_concurrent_with_args
-from cassandra.policies import HostDistance
-from cassandra.query import tuple_factory, SimpleStatement
+from cassoldra.cluster import Cluster, PagedResult
+from cassoldra.concurrent import execute_concurrent, execute_concurrent_with_args
+from cassoldra.policies import HostDistance
+from cassoldra.query import tuple_factory, SimpleStatement
 
 from tests.integration import use_singledc, PROTOCOL_VERSION
 

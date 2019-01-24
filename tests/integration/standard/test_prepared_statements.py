@@ -19,10 +19,10 @@ try:
     import unittest2 as unittest
 except ImportError:
     import unittest  # noqa
-from cassandra import InvalidRequest
+from cassoldra import InvalidRequest
 
-from cassandra.cluster import Cluster
-from cassandra.query import PreparedStatement, UNSET_VALUE
+from cassoldra.cluster import Cluster
+from cassoldra.query import PreparedStatement, UNSET_VALUE
 
 
 def setup_module():

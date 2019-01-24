@@ -19,7 +19,7 @@ import time
 from collections import defaultdict
 from ccmlib.node import Node
 
-from cassandra.query import named_tuple_factory
+from cassoldra.query import named_tuple_factory
 
 from tests.integration import get_node, get_cluster
 

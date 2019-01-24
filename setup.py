@@ -45,7 +45,7 @@ try:
 except ImportError:
     has_subprocess = False
 
-from cassandra import __version__
+from cassoldra import __version__
 
 long_description = ""
 with open("README.rst") as f:
@@ -124,11 +124,11 @@ class BuildFailed(Exception):
         self.ext = ext
 
 
-murmur3_ext = Extension('cassandra.cmurmur3',
-                        sources=['cassandra/cmurmur3.c'])
+murmur3_ext = Extension('cassoldra.cmurmur3',
+                        sources=['cassoldra/cmurmur3.c'])
 
-libev_ext = Extension('cassandra.io.libevwrapper',
-                      sources=['cassandra/io/libevwrapper.c'],
+libev_ext = Extension('cassoldra.io.libevwrapper',
+                      sources=['cassoldra/io/libevwrapper.c'],
                       include_dirs=['/usr/include/libev', '/usr/local/include', '/opt/local/include'],
                       libraries=['ev'],
                       library_dirs=['/usr/local/lib', '/opt/local/lib'])
@@ -293,13 +293,13 @@ On OSX, via homebrew:
                                      'pool', 'protocol', 'query', 'util']
                 compile_args = [] if is_windows else ['-Wno-unused-function']
                 self.extensions.extend(cythonize(
-                    [Extension('cassandra.%s' % m, ['cassandra/%s.py' % m],
+                    [Extension('cassoldra.%s' % m, ['cassoldra/%s.py' % m],
                                extra_compile_args=compile_args)
                         for m in cython_candidates],
                     nthreads=build_concurrency,
                     exclude_failures=True))
 
-                self.extensions.extend(cythonize(NoPatchExtension("*", ["cassandra/*.pyx"], extra_compile_args=compile_args),
+                self.extensions.extend(cythonize(NoPatchExtension("*", ["cassoldra/*.pyx"], extra_compile_args=compile_args),
                                                  nthreads=build_concurrency))
             except Exception:
                 sys.stderr.write("Failed to cythonize one or more modules. These will not be compiled as extensions (optional).\n")
@@ -326,14 +326,14 @@ def run_setup(extensions):
         dependencies.append('futures')
 
     setup(
-        name='cassandra-driver',
+        name='cassandra-driver-old',
         version=__version__,
-        description='Python driver for Cassandra',
+        description='Really old Python driver for Cassandra',
         long_description=long_description,
         url='http://github.com/datastax/python-driver',
         author='Tyler Hobbs',
         author_email='tyler@datastax.com',
-        packages=['cassandra', 'cassandra.io', 'cassandra.cqlengine'],
+        packages=['cassoldra', 'cassoldra.io', 'cassoldra.cqlengine'],
         keywords='cassandra,cql,orm',
         include_package_data=True,
         install_requires=dependencies,

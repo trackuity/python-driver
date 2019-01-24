@@ -14,7 +14,7 @@ The simplest way to create a :class:`~.Cluster` is like this:
 
 .. code-block:: python
 
-    from cassandra.cluster import Cluster
+    from cassoldra.cluster import Cluster
 
     cluster = Cluster()
 
@@ -24,7 +24,7 @@ addresses for nodes in your cluster:
 
 .. code-block:: python
 
-    from cassandra.cluster import Cluster
+    from cassoldra.cluster import Cluster
 
     cluster = Cluster(['192.168.0.1', '192.168.0.2'])
 
@@ -39,8 +39,8 @@ behavior in some other way, this is the place to do it:
 
 .. code-block:: python
 
-    from cassandra.cluster import Cluster
-    from cassandra.policies import DCAwareRoundRobinPolicy
+    from cassoldra.cluster import Cluster
+    from cassoldra.policies import DCAwareRoundRobinPolicy
 
     cluster = Cluster(
         ['10.1.1.3', '10.1.1.4', '10.1.1.5'],
@@ -261,7 +261,7 @@ For example:
 
 .. code-block:: python
 
-    from cassandra import ReadTimeout
+    from cassoldra import ReadTimeout
 
     query = "SELECT * FROM users WHERE user_id=%s"
     future = session.execute_async(query, [user_id])
@@ -333,8 +333,8 @@ in a :class:`~.SimpleStatement`:
 
 .. code-block:: python
 
-    from cassandra import ConsistencyLevel
-    from cassandra.query import SimpleStatement
+    from cassoldra import ConsistencyLevel
+    from cassoldra.query import SimpleStatement
 
     query = SimpleStatement(
         "INSERT INTO users (name, age) VALUES (%s, %s)",
@@ -378,7 +378,7 @@ prepared statement:
 
 .. code-block:: python
 
-    from cassandra import ConsistencyLevel
+    from cassoldra import ConsistencyLevel
 
     cluster = Cluster()
     session = cluster.connect("mykeyspace")

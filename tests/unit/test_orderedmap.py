@@ -17,8 +17,8 @@ try:
 except ImportError:
     import unittest  # noqa
 
-from cassandra.util import OrderedMap, OrderedMapSerializedKey
-from cassandra.cqltypes import EMPTY, UTF8Type, lookup_casstype
+from cassoldra.util import OrderedMap, OrderedMapSerializedKey
+from cassoldra.cqltypes import EMPTY, UTF8Type, lookup_casstype
 import six
 
 class OrderedMapTest(unittest.TestCase):

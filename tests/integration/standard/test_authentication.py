@@ -15,8 +15,8 @@
 import logging
 import time
 
-from cassandra.cluster import Cluster, NoHostAvailable
-from cassandra.auth import PlainTextAuthProvider, SASLClient, SaslAuthProvider
+from cassoldra.cluster import Cluster, NoHostAvailable
+from cassoldra.auth import PlainTextAuthProvider, SASLClient, SaslAuthProvider
 
 from tests.integration import use_singledc, get_cluster, remove_cluster, PROTOCOL_VERSION
 from tests.integration.util import assert_quiescent_pool_state

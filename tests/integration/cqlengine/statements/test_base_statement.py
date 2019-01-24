@@ -16,7 +16,7 @@ try:
 except ImportError:
     import unittest  # noqa
 
-from cassandra.cqlengine.statements import BaseCQLStatement, StatementException
+from cassoldra.cqlengine.statements import BaseCQLStatement, StatementException
 
 
 class BaseStatementTest(unittest.TestCase):

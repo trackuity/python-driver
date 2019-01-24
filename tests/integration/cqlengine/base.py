@@ -18,7 +18,7 @@ except ImportError:
 
 import sys
 
-from cassandra.cqlengine.connection import get_session
+from cassoldra.cqlengine.connection import get_session
 
 
 class BaseCassEngTestCase(unittest.TestCase):

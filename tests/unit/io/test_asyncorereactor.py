@@ -27,12 +27,12 @@ import os
 from six import BytesIO
 import socket
 from socket import error as socket_error
-from cassandra.connection import (HEADER_DIRECTION_TO_CLIENT,
+from cassoldra.connection import (HEADER_DIRECTION_TO_CLIENT,
                                   ConnectionException, ProtocolError,Timer)
-from cassandra.io.asyncorereactor import AsyncoreConnection
-from cassandra.protocol import (write_stringmultimap, write_int, write_string,
+from cassoldra.io.asyncorereactor import AsyncoreConnection
+from cassoldra.protocol import (write_stringmultimap, write_int, write_string,
                                 SupportedMessage, ReadyMessage, ServerError)
-from cassandra.marshal import uint8_pack, uint32_pack, int32_pack
+from cassoldra.marshal import uint8_pack, uint32_pack, int32_pack
 from tests import is_monkey_patched
 from tests.unit.io.utils import submit_and_wait_for_completion, TimerCallback
 

@@ -11,7 +11,7 @@ Columns in your models map to columns in your CQL table. You define CQL columns 
 For a model to be valid it needs at least one primary key column and one non-primary key column. Just as in CQL, the order you define
 your columns in is important, and is the same order they are defined in on a model's corresponding table.
 
-Some basic examples defining models are shown below. Consult the :doc:`Model API docs </api/cassandra/cqlengine/models>` and :doc:`Column API docs </api/cassandra/cqlengine/columns>` for complete details.
+Some basic examples defining models are shown below. Consult the :doc:`Model API docs </api/cassoldra/cqlengine/models>` and :doc:`Column API docs </api/cassoldra/cqlengine/columns>` for complete details.
 
 Example Definitions
 ===================
@@ -20,8 +20,8 @@ This example defines a ``Person`` table, with the columns ``first_name`` and ``l
 
 .. code-block:: python
 
-   from cassandra.cqlengine import columns
-   from cassandra.cqlengine.models import Model
+   from cassoldra.cqlengine import columns
+   from cassoldra.cqlengine.models import Model
 
     class Person(Model):
         id = columns.UUID(primary_key=True)
@@ -44,8 +44,8 @@ Here's an example of a comment table created with clustering keys, in descending
 
 .. code-block:: python
 
-    from cassandra.cqlengine import columns
-    from cassandra.cqlengine.models import Model
+    from cassoldra.cqlengine import columns
+    from cassoldra.cqlengine.models import Model
 
     class Comment(Model):
         photo_id = columns.UUID(primary_key=True)
@@ -67,12 +67,12 @@ To sync the models to the database, you may do the following*:
 
 .. code-block:: python
 
-    from cassandra.cqlengine.management import sync_table
+    from cassoldra.cqlengine.management import sync_table
     sync_table(Person)
     sync_table(Comment)
 
 \*Note: synchronizing models causes schema changes, and should be done with caution.
-Please see the discussion in :doc:`/api/cassandra/cqlengine/management` for considerations.
+Please see the discussion in :doc:`/api/cassoldra/cqlengine/management` for considerations.
 
 For examples on manipulating data and creating queries, see :doc:`queryset`
 
@@ -186,9 +186,9 @@ User Defined Types
 cqlengine models User Defined Types (UDTs) much like tables, with fields defined by column type attributes. However, UDT instances
 are only created, presisted, and queried via table Models. A short example to introduce the pattern::
 
-    from cassandra.cqlengine.columns import *
-    from cassandra.cqlengine.models import Model
-    from cassandra.cqlengine.usertype import UserType
+    from cassoldra.cqlengine.columns import *
+    from cassoldra.cqlengine.models import Model
+    from cassoldra.cqlengine.usertype import UserType
 
     class address(UserType):
         street = Text()

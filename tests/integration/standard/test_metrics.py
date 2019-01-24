@@ -19,10 +19,10 @@ try:
 except ImportError:
     import unittest  # noqa
 
-from cassandra.query import SimpleStatement
-from cassandra import ConsistencyLevel, WriteTimeout, Unavailable, ReadTimeout
+from cassoldra.query import SimpleStatement
+from cassoldra import ConsistencyLevel, WriteTimeout, Unavailable, ReadTimeout
 
-from cassandra.cluster import Cluster, NoHostAvailable
+from cassoldra.cluster import Cluster, NoHostAvailable
 from tests.integration import get_cluster, get_node, use_singledc, PROTOCOL_VERSION, execute_until_pass
 
 

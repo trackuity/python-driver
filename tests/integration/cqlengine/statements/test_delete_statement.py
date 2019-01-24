@@ -13,8 +13,8 @@
 # limitations under the License.
 
 from unittest import TestCase
-from cassandra.cqlengine.statements import DeleteStatement, WhereClause, MapDeleteClause
-from cassandra.cqlengine.operators import *
+from cassoldra.cqlengine.statements import DeleteStatement, WhereClause, MapDeleteClause
+from cassoldra.cqlengine.operators import *
 import six
 
 class DeleteStatementTests(TestCase):

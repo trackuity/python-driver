@@ -12,10 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from cassandra.cqlengine import operators
-from cassandra.cqlengine.named import NamedKeyspace
-from cassandra.cqlengine.operators import EqualsOperator, GreaterThanOrEqualOperator
-from cassandra.cqlengine.query import ResultObject
+from cassoldra.cqlengine import operators
+from cassoldra.cqlengine.named import NamedKeyspace
+from cassoldra.cqlengine.operators import EqualsOperator, GreaterThanOrEqualOperator
+from cassoldra.cqlengine.query import ResultObject
 
 from tests.integration.cqlengine.base import BaseCassEngTestCase
 from tests.integration.cqlengine.query.test_queryset import BaseQuerySetUsage

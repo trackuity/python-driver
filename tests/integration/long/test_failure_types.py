@@ -14,11 +14,11 @@
 
 import sys,logging, traceback, time
 
-from cassandra import ConsistencyLevel, OperationTimedOut, ReadTimeout, WriteTimeout, ReadFailure, WriteFailure,\
+from cassoldra import ConsistencyLevel, OperationTimedOut, ReadTimeout, WriteTimeout, ReadFailure, WriteFailure,\
     FunctionFailure
-from cassandra.cluster import Cluster
-from cassandra.concurrent import execute_concurrent_with_args
-from cassandra.query import SimpleStatement
+from cassoldra.cluster import Cluster
+from cassoldra.concurrent import execute_concurrent_with_args
+from cassoldra.query import SimpleStatement
 from tests.integration import use_singledc, PROTOCOL_VERSION, get_cluster, setup_keyspace, remove_cluster, get_node
 from mock import Mock
 
@@ -121,7 +121,7 @@ class ClientExceptionTests(unittest.TestCase):
         for node in failing_nodes:
             if node not in self.nodes_currently_failing:
                 node.stop(wait_other_notice=True, gently=False)
-                node.start(jvm_args=[" -Dcassandra.test.fail_writes_ks=" + keyspace], wait_for_binary_proto=True,
+                node.start(jvm_args=[" -Dcassoldra.test.fail_writes_ks=" + keyspace], wait_for_binary_proto=True,
                            wait_other_notice=True)
                 self.nodes_currently_failing.append(node)
 
@@ -153,7 +153,7 @@ class ClientExceptionTests(unittest.TestCase):
         Test to validate that write failures from the coordinator are surfaced appropriately.
 
         test_write_failures_from_coordinator Enable write failures on the various nodes using a custom jvm flag,
-        cassandra.test.fail_writes_ks. This will cause writes to fail on that specific node. Depending on the replication
+        cassoldra.test.fail_writes_ks. This will cause writes to fail on that specific node. Depending on the replication
         factor of the keyspace, and the consistency level, we will expect the coordinator to send WriteFailure, or not.
 
 

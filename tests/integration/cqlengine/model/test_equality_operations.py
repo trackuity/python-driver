@@ -15,10 +15,10 @@
 from uuid import uuid4
 from tests.integration.cqlengine.base import BaseCassEngTestCase
 
-from cassandra.cqlengine.management import sync_table
-from cassandra.cqlengine.management import drop_table
-from cassandra.cqlengine.models import Model
-from cassandra.cqlengine import columns
+from cassoldra.cqlengine.management import sync_table
+from cassoldra.cqlengine.management import drop_table
+from cassoldra.cqlengine.models import Model
+from cassoldra.cqlengine import columns
 
 class TestModel(Model):
 

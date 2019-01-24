@@ -21,7 +21,7 @@ set the :attr:`~.Cluster.protocol_version`:
 
 .. code-block:: python
 
-    from cassandra.cluster import Cluster
+    from cassoldra.cluster import Cluster
 
     cluster = Cluster(protocol_version=3)
 
@@ -108,7 +108,7 @@ native protocol. You can explicitly set the protocol version to
 
 .. code-block:: python
 
-    from cassandra.cluster import Cluster
+    from cassoldra.cluster import Cluster
 
     cluster = Cluster(protocol_version=2)
 
@@ -117,7 +117,7 @@ explicitly set the :attr:`~.Cluster.protocol_version` to 1:
 
 .. code-block:: python
 
-    from cassandra.cluster import Cluster
+    from cassoldra.cluster import Cluster
 
     cluster = Cluster(protocol_version=1)
 
@@ -131,7 +131,7 @@ See :ref:`query-paging` for full details.
 Protocol-Level Batch Statements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 With version 1 of the native protocol, batching of statements required
-using a `BATCH cql query <http://cassandra.apache.org/doc/cql3/CQL.html#batchStmt>`_.
+using a `BATCH cql query <http://cassoldra.apache.org/doc/cql3/CQL.html#batchStmt>`_.
 With version 2 of the native protocol, you can now batch statements at
 the protocol level. This allows you to use many different prepared
 statements within a single batch.
@@ -158,18 +158,18 @@ This helps to guarantee a clean shutdown.
 
 Deprecations
 ^^^^^^^^^^^^
-The following functions have moved from ``cassandra.decoder`` to ``cassandra.query``.
+The following functions have moved from ``cassoldra.decoder`` to ``cassoldra.query``.
 The original functions have been left in place with a :exc:`DeprecationWarning` for
 now:
 
-* :attr:`cassandra.decoder.tuple_factory` has moved to
-  :attr:`cassandra.query.tuple_factory`
-* :attr:`cassandra.decoder.named_tuple_factory` has moved to
-  :attr:`cassandra.query.named_tuple_factory`
-* :attr:`cassandra.decoder.dict_factory` has moved to
-  :attr:`cassandra.query.dict_factory`
-* :attr:`cassandra.decoder.ordered_dict_factory` has moved to
-  :attr:`cassandra.query.ordered_dict_factory`
+* :attr:`cassoldra.decoder.tuple_factory` has moved to
+  :attr:`cassoldra.query.tuple_factory`
+* :attr:`cassoldra.decoder.named_tuple_factory` has moved to
+  :attr:`cassoldra.query.named_tuple_factory`
+* :attr:`cassoldra.decoder.dict_factory` has moved to
+  :attr:`cassoldra.query.dict_factory`
+* :attr:`cassoldra.decoder.ordered_dict_factory` has moved to
+  :attr:`cassoldra.query.ordered_dict_factory`
 
 Dependency Changes
 ^^^^^^^^^^^^^^^^^^

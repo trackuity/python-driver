@@ -21,8 +21,8 @@ except ImportError:
     import unittest  # noqa
 
 
-from cassandra.cluster import Cluster
-from cassandra.protocol import ConfigurationException
+from cassoldra.cluster import Cluster
+from cassoldra.protocol import ConfigurationException
 from tests.integration import use_singledc, PROTOCOL_VERSION
 from tests.integration.datatype_utils import update_datatypes
 

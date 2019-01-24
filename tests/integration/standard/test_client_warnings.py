@@ -18,8 +18,8 @@ try:
 except ImportError:
     import unittest
 
-from cassandra.query import BatchStatement
-from cassandra.cluster import Cluster
+from cassoldra.query import BatchStatement
+from cassoldra.cluster import Cluster
 
 from tests.integration import use_singledc, PROTOCOL_VERSION
 

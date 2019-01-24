@@ -14,10 +14,10 @@
 
 import struct, time, traceback, sys, logging
 
-from cassandra import ConsistencyLevel, OperationTimedOut, ReadTimeout, WriteTimeout, Unavailable
-from cassandra.cluster import Cluster
-from cassandra.policies import TokenAwarePolicy, RoundRobinPolicy, DowngradingConsistencyRetryPolicy
-from cassandra.query import SimpleStatement
+from cassoldra import ConsistencyLevel, OperationTimedOut, ReadTimeout, WriteTimeout, Unavailable
+from cassoldra.cluster import Cluster
+from cassoldra.policies import TokenAwarePolicy, RoundRobinPolicy, DowngradingConsistencyRetryPolicy
+from cassoldra.query import SimpleStatement
 from tests.integration import use_singledc, PROTOCOL_VERSION, execute_until_pass
 
 from tests.integration.long.utils import (force_stop, create_schema, wait_for_down, wait_for_up,

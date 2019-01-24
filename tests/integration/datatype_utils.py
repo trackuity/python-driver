@@ -16,7 +16,7 @@ from decimal import Decimal
 from datetime import datetime, date, time
 from uuid import uuid1, uuid4
 
-from cassandra.util import OrderedMap, Date, Time, sortedset
+from cassoldra.util import OrderedMap, Date, Time, sortedset
 
 from tests.integration import get_server_versions
 

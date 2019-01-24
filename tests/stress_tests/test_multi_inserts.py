@@ -18,7 +18,7 @@ except ImportError:
     import unittest
 
 import os
-from cassandra.cluster import Cluster
+from cassoldra.cluster import Cluster
 from tests.integration import use_singledc, PROTOCOL_VERSION
 
 

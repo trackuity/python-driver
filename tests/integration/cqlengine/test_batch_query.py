@@ -14,10 +14,10 @@
 
 import sure
 
-from cassandra.cqlengine import columns
-from cassandra.cqlengine.management import drop_table, sync_table
-from cassandra.cqlengine.models import Model
-from cassandra.cqlengine.query import BatchQuery
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine.management import drop_table, sync_table
+from cassoldra.cqlengine.models import Model
+from cassoldra.cqlengine.query import BatchQuery
 from tests.integration.cqlengine.base import BaseCassEngTestCase
 
 class TestMultiKeyModel(Model):

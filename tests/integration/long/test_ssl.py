@@ -18,9 +18,9 @@ except ImportError:
     import unittest
 
 import os, sys, traceback, logging, ssl
-from cassandra.cluster import Cluster, NoHostAvailable
-from cassandra import ConsistencyLevel
-from cassandra.query import SimpleStatement
+from cassoldra.cluster import Cluster, NoHostAvailable
+from cassoldra import ConsistencyLevel
+from cassoldra.query import SimpleStatement
 from tests.integration import use_singledc, PROTOCOL_VERSION, get_cluster, remove_cluster
 
 log = logging.getLogger(__name__)

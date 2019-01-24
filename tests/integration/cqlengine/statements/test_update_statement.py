@@ -16,8 +16,8 @@ try:
 except ImportError:
     import unittest  # noqa
 
-from cassandra.cqlengine.operators import *
-from cassandra.cqlengine.statements import (UpdateStatement, WhereClause,
+from cassoldra.cqlengine.operators import *
+from cassoldra.cqlengine.statements import (UpdateStatement, WhereClause,
                                   AssignmentClause, SetUpdateClause,
                                   ListUpdateClause)
 import six

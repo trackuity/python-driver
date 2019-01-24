@@ -13,7 +13,7 @@
 # limitations under the License.
 
 from unittest import TestCase
-from cassandra.cqlengine.statements import BaseClause
+from cassoldra.cqlengine.statements import BaseClause
 
 
 class BaseClauseTests(TestCase):

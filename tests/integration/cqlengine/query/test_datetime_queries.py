@@ -14,15 +14,15 @@
 
 from datetime import datetime, timedelta
 from uuid import uuid4
-from cassandra.cqlengine.functions import get_total_seconds
+from cassoldra.cqlengine.functions import get_total_seconds
 
 from tests.integration.cqlengine.base import BaseCassEngTestCase
 
-from cassandra.cqlengine.management import sync_table
-from cassandra.cqlengine.management import drop_table
-from cassandra.cqlengine.models import Model, ModelException
-from cassandra.cqlengine import columns
-from cassandra.cqlengine import query
+from cassoldra.cqlengine.management import sync_table
+from cassoldra.cqlengine.management import drop_table
+from cassoldra.cqlengine.models import Model, ModelException
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine import query
 
 class DateTimeQueryTestModel(Model):
 

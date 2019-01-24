@@ -20,11 +20,11 @@ except ImportError:
 from datetime import datetime
 import six
 
-from cassandra import InvalidRequest
-from cassandra.cluster import Cluster
-from cassandra.cqltypes import Int32Type, EMPTY
-from cassandra.query import dict_factory, ordered_dict_factory
-from cassandra.util import sortedset
+from cassoldra import InvalidRequest
+from cassoldra.cluster import Cluster
+from cassoldra.cqltypes import Int32Type, EMPTY
+from cassoldra.query import dict_factory, ordered_dict_factory
+from cassoldra.util import sortedset
 
 from tests.integration import get_server_versions, use_singledc, PROTOCOL_VERSION, execute_until_pass
 from tests.integration.datatype_utils import update_datatypes, PRIMITIVE_DATATYPES, COLLECTION_TYPES, \
@@ -690,7 +690,7 @@ class TypeTests(unittest.TestCase):
         s.execute("""
             CREATE TABLE composites (
                 a int PRIMARY KEY,
-                b 'org.apache.cassandra.db.marshal.CompositeType(AsciiType, Int32Type)'
+                b 'org.apache.cassoldra.db.marshal.CompositeType(AsciiType, Int32Type)'
             )""")
 
         # CompositeType string literals are split on ':' chars

@@ -26,13 +26,13 @@ from tests import is_monkey_patched
 
 
 try:
-    from cassandra.io.libevreactor import LibevConnection
+    from cassoldra.io.libevreactor import LibevConnection
 except ImportError:
     LibevConnection = None  # noqa
 
 
 @patch('socket.socket')
-@patch('cassandra.io.libevwrapper.IO')
+@patch('cassoldra.io.libevwrapper.IO')
 class LibevTimerTest(unittest.TestCase):
 
     def setUp(self):

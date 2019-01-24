@@ -14,13 +14,13 @@
 
 import mock
 
-from cassandra.cqlengine import columns
-from cassandra.cqlengine.connection import NOT_SET
-from cassandra.cqlengine.management import drop_table, sync_table
-from cassandra.cqlengine.models import Model
-from cassandra.cqlengine.query import BatchQuery, DMLQuery
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine.connection import NOT_SET
+from cassoldra.cqlengine.management import drop_table, sync_table
+from cassoldra.cqlengine.models import Model
+from cassoldra.cqlengine.query import BatchQuery, DMLQuery
 from tests.integration.cqlengine.base import BaseCassEngTestCase
-from cassandra.cluster import Session
+from cassoldra.cluster import Session
 
 
 class TestMultiKeyModel(Model):

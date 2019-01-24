@@ -1,7 +1,7 @@
-``cassandra.io.geventreactor`` - ``gevent``-compatible Event Loop
+``cassoldra.io.geventreactor`` - ``gevent``-compatible Event Loop
 =================================================================
 
-.. module:: cassandra.io.geventreactor
+.. module:: cassoldra.io.geventreactor
 
 .. autoclass:: GeventConnection
    :members:

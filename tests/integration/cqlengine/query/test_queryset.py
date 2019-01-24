@@ -23,23 +23,23 @@ import time
 from uuid import uuid1, uuid4
 import uuid
 
-from cassandra.cluster import Session
+from cassoldra.cluster import Session
 from tests.integration.cqlengine.base import BaseCassEngTestCase
-from cassandra.cqlengine.connection import NOT_SET
+from cassoldra.cqlengine.connection import NOT_SET
 import mock
-from cassandra.cqlengine import functions
-from cassandra.cqlengine.management import sync_table, drop_table
-from cassandra.cqlengine.models import Model
-from cassandra.cqlengine import columns
-from cassandra.cqlengine import query
+from cassoldra.cqlengine import functions
+from cassoldra.cqlengine.management import sync_table, drop_table
+from cassoldra.cqlengine.models import Model
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine import query
 from datetime import timedelta
 from datetime import tzinfo
 
-from cassandra.cqlengine import statements
-from cassandra.cqlengine import operators
-from cassandra.util import uuid_from_time
+from cassoldra.cqlengine import statements
+from cassoldra.cqlengine import operators
+from cassoldra.util import uuid_from_time
 
-from cassandra.cqlengine.connection import get_session
+from cassoldra.cqlengine.connection import get_session
 from tests.integration import PROTOCOL_VERSION
 
 

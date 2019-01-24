@@ -23,7 +23,7 @@ from tests import is_eventlet_monkey_patched
 import time
 
 try:
-    from cassandra.io.eventletreactor import EventletConnection
+    from cassoldra.io.eventletreactor import EventletConnection
 except ImportError:
     EventletConnection = None  # noqa
 

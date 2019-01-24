@@ -1,7 +1,7 @@
-``cassandra.metrics`` - Performance Metrics
+``cassoldra.metrics`` - Performance Metrics
 ===========================================
 
-.. module:: cassandra.metrics
+.. module:: cassoldra.metrics
 
-.. autoclass:: cassandra.metrics.Metrics ()
+.. autoclass:: cassoldra.metrics.Metrics ()
    :members:

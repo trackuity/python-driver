@@ -27,9 +27,9 @@ sys.path.append(dirname)
 sys.path.append(os.path.join(dirname, '..'))
 
 import cassandra
-from cassandra.cluster import Cluster
-from cassandra.io.asyncorereactor import AsyncoreConnection
-from cassandra.policies import HostDistance
+from cassoldra.cluster import Cluster
+from cassoldra.io.asyncorereactor import AsyncoreConnection
+from cassoldra.policies import HostDistance
 
 log = logging.getLogger()
 handler = logging.StreamHandler()
@@ -41,7 +41,7 @@ logging.getLogger('cassandra').setLevel(logging.WARN)
 have_libev = False
 supported_reactors = [AsyncoreConnection]
 try:
-    from cassandra.io.libevreactor import LibevConnection
+    from cassoldra.io.libevreactor import LibevConnection
     have_libev = True
     supported_reactors.append(LibevConnection)
 except ImportError as exc:
@@ -49,7 +49,7 @@ except ImportError as exc:
 
 have_twisted = False
 try:
-    from cassandra.io.twistedreactor import TwistedConnection
+    from cassoldra.io.twistedreactor import TwistedConnection
     have_twisted = True
     supported_reactors.append(TwistedConnection)
 except ImportError as exc:
@@ -61,7 +61,7 @@ TABLE = "testtable"
 
 
 def setup(hosts):
-    log.info("Using 'cassandra' package from %s", cassandra.__path__)
+    log.info("Using 'cassandra' package from %s", cassoldra.__path__)
 
     cluster = Cluster(hosts, protocol_version=1)
     cluster.set_core_connections_per_host(HostDistance.LOCAL, 1)

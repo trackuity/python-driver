@@ -18,9 +18,9 @@ tests/integration/ccm
 setuptools*.tar.gz
 setuptools*.egg
 
-cassandra/*.c
-!cassandra/cmurmur3.c
-cassandra/*.html
+cassoldra/*.c
+!cassoldra/cmurmur3.c
+cassoldra/*.html
 
 # OSX
 .DS_Store

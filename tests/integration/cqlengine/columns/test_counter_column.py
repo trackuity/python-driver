@@ -14,9 +14,9 @@
 
 from uuid import uuid4
 
-from cassandra.cqlengine import columns
-from cassandra.cqlengine.management import sync_table, drop_table
-from cassandra.cqlengine.models import Model, ModelDefinitionException
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine.management import sync_table, drop_table
+from cassoldra.cqlengine.models import Model, ModelDefinitionException
 from tests.integration.cqlengine.base import BaseCassEngTestCase
 
 

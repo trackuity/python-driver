@@ -13,7 +13,7 @@ To avoid this, make sure to create sessions per process, after the fork. Using u
 
     from flask import Flask
     from uwsgidecorators import postfork
-    from cassandra.cluster import Cluster
+    from cassoldra.cluster import Cluster
 
     session = None
     prepared = None

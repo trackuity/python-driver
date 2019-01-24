@@ -50,9 +50,9 @@ copyright = u'2014, DataStax'
 # built documents.
 #
 # The short X.Y version.
-version = cassandra.__version__
+version = cassoldra.__version__
 # The full version, including alpha/beta/rc tags.
-release = cassandra.__version__
+release = cassoldra.__version__
 
 autodoc_member_order = 'bysource'
 autoclass_content = 'both'

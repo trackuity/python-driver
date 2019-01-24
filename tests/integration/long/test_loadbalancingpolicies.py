@@ -14,14 +14,14 @@
 
 import struct, time, logging, sys, traceback
 
-from cassandra import ConsistencyLevel, Unavailable, OperationTimedOut, ReadTimeout, ReadFailure, \
+from cassoldra import ConsistencyLevel, Unavailable, OperationTimedOut, ReadTimeout, ReadFailure, \
     WriteTimeout, WriteFailure
-from cassandra.cluster import Cluster, NoHostAvailable
-from cassandra.concurrent import execute_concurrent_with_args
-from cassandra.metadata import murmur3
-from cassandra.policies import (RoundRobinPolicy, DCAwareRoundRobinPolicy,
+from cassoldra.cluster import Cluster, NoHostAvailable
+from cassoldra.concurrent import execute_concurrent_with_args
+from cassoldra.metadata import murmur3
+from cassoldra.policies import (RoundRobinPolicy, DCAwareRoundRobinPolicy,
                                 TokenAwarePolicy, WhiteListRoundRobinPolicy)
-from cassandra.query import SimpleStatement
+from cassoldra.query import SimpleStatement
 
 from tests.integration import use_singledc, use_multidc, remove_cluster, PROTOCOL_VERSION
 from tests.integration.long.utils import (wait_for_up, create_schema,

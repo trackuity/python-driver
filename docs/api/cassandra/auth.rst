@@ -1,7 +1,7 @@
-``cassandra.auth`` - Authentication
+``cassoldra.auth`` - Authentication
 ===================================
 
-.. module:: cassandra.auth
+.. module:: cassoldra.auth
 
 .. autoclass:: AuthProvider
     :members:

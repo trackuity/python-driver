@@ -13,7 +13,7 @@
 # limitations under the License.
 
 from unittest import TestCase
-from cassandra.cqlengine.operators import *
+from cassoldra.cqlengine.operators import *
 
 import six
 

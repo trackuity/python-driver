@@ -20,11 +20,11 @@ except ImportError:
 from concurrent.futures import ThreadPoolExecutor
 from mock import Mock, ANY, call
 
-from cassandra import OperationTimedOut
-from cassandra.protocol import ResultMessage, RESULT_KIND_ROWS
-from cassandra.cluster import ControlConnection, _Scheduler
-from cassandra.pool import Host
-from cassandra.policies import (SimpleConvictionPolicy, RoundRobinPolicy,
+from cassoldra import OperationTimedOut
+from cassoldra.protocol import ResultMessage, RESULT_KIND_ROWS
+from cassoldra.cluster import ControlConnection, _Scheduler
+from cassoldra.pool import Host
+from cassoldra.policies import (SimpleConvictionPolicy, RoundRobinPolicy,
                                 ConstantReconnectionPolicy)
 
 PEER_IP = "foobar"

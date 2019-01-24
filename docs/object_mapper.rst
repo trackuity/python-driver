@@ -45,11 +45,11 @@ Getting Started
     .. code-block:: python
 
         import uuid
-        from cassandra.cqlengine import columns
-        from cassandra.cqlengine import connection
+        from cassoldra.cqlengine import columns
+        from cassoldra.cqlengine import connection
         from datetime import datetime
-        from cassandra.cqlengine.management import sync_table
-        from cassandra.cqlengine.models import Model
+        from cassoldra.cqlengine.management import sync_table
+        from cassoldra.cqlengine.models import Model
 
         #first, define a model
         class ExampleModel(Model):
@@ -59,7 +59,7 @@ Getting Started
             description     = columns.Text(required=False)
 
         #next, setup the connection to your cassandra server(s)...
-        # see http://datastax.github.io/python-driver/api/cassandra/cluster.html for options
+        # see http://datastax.github.io/python-driver/api/cassoldra/cluster.html for options
         # the list of hosts will be passed to create a Cluster() instance
         connection.setup(['127.0.0.1'], "cqlengine", protocol_version=3)
 

@@ -23,16 +23,16 @@ import sys
 from threading import Thread, Event
 import time
 
-from cassandra import ConsistencyLevel, OperationTimedOut
-from cassandra.cluster import NoHostAvailable
-from cassandra.io.asyncorereactor import AsyncoreConnection
-from cassandra.protocol import QueryMessage
+from cassoldra import ConsistencyLevel, OperationTimedOut
+from cassoldra.cluster import NoHostAvailable
+from cassoldra.io.asyncorereactor import AsyncoreConnection
+from cassoldra.protocol import QueryMessage
 
 from tests import is_monkey_patched
 from tests.integration import use_singledc, PROTOCOL_VERSION
 
 try:
-    from cassandra.io.libevreactor import LibevConnection
+    from cassoldra.io.libevreactor import LibevConnection
 except ImportError:
     LibevConnection = None
 

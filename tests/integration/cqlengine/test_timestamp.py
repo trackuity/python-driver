@@ -17,10 +17,10 @@ import mock
 import sure
 from uuid import uuid4
 
-from cassandra.cqlengine import columns
-from cassandra.cqlengine.management import sync_table
-from cassandra.cqlengine.models import Model
-from cassandra.cqlengine.query import BatchQuery
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine.management import sync_table
+from cassoldra.cqlengine.models import Model
+from cassoldra.cqlengine.query import BatchQuery
 from tests.integration.cqlengine.base import BaseCassEngTestCase
 
 

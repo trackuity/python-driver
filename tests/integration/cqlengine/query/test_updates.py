@@ -13,11 +13,11 @@
 # limitations under the License.
 
 from uuid import uuid4
-from cassandra.cqlengine import ValidationError
+from cassoldra.cqlengine import ValidationError
 
-from cassandra.cqlengine.models import Model
-from cassandra.cqlengine.management import sync_table, drop_table
-from cassandra.cqlengine import columns
+from cassoldra.cqlengine.models import Model
+from cassoldra.cqlengine.management import sync_table, drop_table
+from cassoldra.cqlengine import columns
 from tests.integration.cqlengine import is_prepend_reversed
 from tests.integration.cqlengine.base import BaseCassEngTestCase
 

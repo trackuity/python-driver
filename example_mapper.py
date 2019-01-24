@@ -28,12 +28,12 @@ log.addHandler(handler)
 
 from uuid import uuid4
 
-from cassandra.cqlengine import columns
-from cassandra.cqlengine import connection
-from cassandra.cqlengine import management
-from cassandra.cqlengine import ValidationError
-from cassandra.cqlengine.models import Model
-from cassandra.cqlengine.query import BatchQuery, LWTException
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine import connection
+from cassoldra.cqlengine import management
+from cassoldra.cqlengine import ValidationError
+from cassoldra.cqlengine.models import Model
+from cassoldra.cqlengine.query import BatchQuery, LWTException
 
 KEYSPACE = "testkeyspace"
 

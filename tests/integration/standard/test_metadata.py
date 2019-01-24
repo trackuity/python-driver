@@ -22,15 +22,15 @@ import six
 import sys
 from mock import Mock
 
-from cassandra import AlreadyExists, SignatureDescriptor, UserFunctionDescriptor, UserAggregateDescriptor
+from cassoldra import AlreadyExists, SignatureDescriptor, UserFunctionDescriptor, UserAggregateDescriptor
 
-from cassandra.cluster import Cluster
-from cassandra.cqltypes import DoubleType, Int32Type, ListType, UTF8Type, MapType, LongType
-from cassandra.encoder import Encoder
-from cassandra.metadata import (Metadata, KeyspaceMetadata, TableMetadata, IndexMetadata,
+from cassoldra.cluster import Cluster
+from cassoldra.cqltypes import DoubleType, Int32Type, ListType, UTF8Type, MapType, LongType
+from cassoldra.encoder import Encoder
+from cassoldra.metadata import (Metadata, KeyspaceMetadata, TableMetadata, IndexMetadata,
                                 Token, MD5Token, TokenMap, murmur3, Function, Aggregate, protect_name, protect_names)
-from cassandra.policies import SimpleConvictionPolicy
-from cassandra.pool import Host
+from cassoldra.policies import SimpleConvictionPolicy
+from cassoldra.pool import Host
 
 from tests.integration import get_cluster, use_singledc, PROTOCOL_VERSION, get_server_versions, execute_until_pass
 
@@ -729,8 +729,8 @@ CREATE TABLE export_udts.users (
 ) WITH bloom_filter_fp_chance = 0.01
     AND caching = '{"keys":"ALL", "rows_per_partition":"NONE"}'
     AND comment = ''
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy'}
-    AND compression = {'sstable_compression': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND compaction = {'class': 'org.apache.cassoldra.db.compaction.SizeTieredCompactionStrategy'}
+    AND compression = {'sstable_compression': 'org.apache.cassoldra.io.compress.LZ4Compressor'}
     AND dclocal_read_repair_chance = 0.1
     AND default_time_to_live = 0
     AND gc_grace_seconds = 864000
@@ -750,8 +750,8 @@ CREATE TABLE export_udts.users (
 ) WITH bloom_filter_fp_chance = 0.01
     AND caching = '{"keys":"ALL", "rows_per_partition":"NONE"}'
     AND comment = ''
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy'}
-    AND compression = {'sstable_compression': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND compaction = {'class': 'org.apache.cassoldra.db.compaction.SizeTieredCompactionStrategy'}
+    AND compression = {'sstable_compression': 'org.apache.cassoldra.io.compress.LZ4Compressor'}
     AND dclocal_read_repair_chance = 0.1
     AND default_time_to_live = 0
     AND gc_grace_seconds = 864000
@@ -920,7 +920,7 @@ CREATE COLUMN FAMILY nested_composite_key
 
 create column family composite_comp_no_col
   with column_type = 'Standard'
-  and comparator = 'DynamicCompositeType(t=>org.apache.cassandra.db.marshal.TimeUUIDType,s=>org.apache.cassandra.db.marshal.UTF8Type,b=>org.apache.cassandra.db.marshal.BytesType)'
+  and comparator = 'DynamicCompositeType(t=>org.apache.cassoldra.db.marshal.TimeUUIDType,s=>org.apache.cassoldra.db.marshal.UTF8Type,b=>org.apache.cassoldra.db.marshal.BytesType)'
   and default_validation_class = 'BytesType'
   and key_validation_class = 'BytesType'
   and read_repair_chance = 0.0
@@ -928,7 +928,7 @@ create column family composite_comp_no_col
   and gc_grace = 864000
   and min_compaction_threshold = 4
   and max_compaction_threshold = 32
-  and compaction_strategy = 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy'
+  and compaction_strategy = 'org.apache.cassoldra.db.compaction.SizeTieredCompactionStrategy'
   and caching = 'KEYS_ONLY'
   and cells_per_row_to_cache = '0'
   and default_time_to_live = 0
@@ -937,7 +937,7 @@ create column family composite_comp_no_col
 
 create column family composite_comp_with_col
   with column_type = 'Standard'
-  and comparator = 'DynamicCompositeType(t=>org.apache.cassandra.db.marshal.TimeUUIDType,s=>org.apache.cassandra.db.marshal.UTF8Type,b=>org.apache.cassandra.db.marshal.BytesType)'
+  and comparator = 'DynamicCompositeType(t=>org.apache.cassoldra.db.marshal.TimeUUIDType,s=>org.apache.cassoldra.db.marshal.UTF8Type,b=>org.apache.cassoldra.db.marshal.BytesType)'
   and default_validation_class = 'BytesType'
   and key_validation_class = 'BytesType'
   and read_repair_chance = 0.0
@@ -945,7 +945,7 @@ create column family composite_comp_with_col
   and gc_grace = 864000
   and min_compaction_threshold = 4
   and max_compaction_threshold = 32
-  and compaction_strategy = 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy'
+  and compaction_strategy = 'org.apache.cassoldra.db.compaction.SizeTieredCompactionStrategy'
   and caching = 'KEYS_ONLY'
   and cells_per_row_to_cache = '0'
   and default_time_to_live = 0
@@ -960,10 +960,10 @@ create column family composite_comp_with_col
     validation_class : BytesType,
     index_name : 'idx_two',
     index_type : 0}]
-  and compression_options = {'sstable_compression' : 'org.apache.cassandra.io.compress.LZ4Compressor'};"""
+  and compression_options = {'sstable_compression' : 'org.apache.cassoldra.io.compress.LZ4Compressor'};"""
 
         # note: the inner key type for legacy.nested_composite_key
-        # (org.apache.cassandra.db.marshal.CompositeType(org.apache.cassandra.db.marshal.UUIDType, org.apache.cassandra.db.marshal.UTF8Type))
+        # (org.apache.cassoldra.db.marshal.CompositeType(org.apache.cassoldra.db.marshal.UUIDType, org.apache.cassoldra.db.marshal.UTF8Type))
         # is a bit strange, but it replays in CQL with desired results
         expected_string = """CREATE KEYSPACE legacy WITH replication = {'class': 'SimpleStrategy', 'replication_factor': '1'}  AND durable_writes = true;
 
@@ -985,8 +985,8 @@ CREATE TABLE legacy.composite_comp_with_col (
     AND CLUSTERING ORDER BY (t ASC, b ASC, s ASC)
     AND caching = '{"keys":"ALL", "rows_per_partition":"NONE"}'
     AND comment = 'Stores file meta data'
-    AND compaction = {'min_threshold': '4', 'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32'}
-    AND compression = {'sstable_compression': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND compaction = {'min_threshold': '4', 'class': 'org.apache.cassoldra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32'}
+    AND compression = {'sstable_compression': 'org.apache.cassoldra.io.compress.LZ4Compressor'}
     AND dclocal_read_repair_chance = 0.1
     AND default_time_to_live = 0
     AND gc_grace_seconds = 864000
@@ -1000,15 +1000,15 @@ CREATE INDEX idx_one ON legacy.composite_comp_with_col ("b@6d616d6d616a616d6d61"
 */
 
 CREATE TABLE legacy.nested_composite_key (
-    key 'org.apache.cassandra.db.marshal.CompositeType(org.apache.cassandra.db.marshal.UUIDType, org.apache.cassandra.db.marshal.UTF8Type)',
+    key 'org.apache.cassoldra.db.marshal.CompositeType(org.apache.cassoldra.db.marshal.UUIDType, org.apache.cassoldra.db.marshal.UTF8Type)',
     key2 bigint,
     full_name text,
     PRIMARY KEY ((key, key2))
 ) WITH COMPACT STORAGE
     AND caching = '{"keys":"ALL", "rows_per_partition":"NONE"}'
     AND comment = ''
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy'}
-    AND compression = {'sstable_compression': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND compaction = {'class': 'org.apache.cassoldra.db.compaction.SizeTieredCompactionStrategy'}
+    AND compression = {'sstable_compression': 'org.apache.cassoldra.io.compress.LZ4Compressor'}
     AND dclocal_read_repair_chance = 0.1
     AND default_time_to_live = 0
     AND gc_grace_seconds = 864000
@@ -1026,8 +1026,8 @@ CREATE TABLE legacy.composite_partition_with_col (
 ) WITH COMPACT STORAGE
     AND caching = '{"keys":"ALL", "rows_per_partition":"NONE"}'
     AND comment = ''
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy'}
-    AND compression = {'sstable_compression': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND compaction = {'class': 'org.apache.cassoldra.db.compaction.SizeTieredCompactionStrategy'}
+    AND compression = {'sstable_compression': 'org.apache.cassoldra.io.compress.LZ4Compressor'}
     AND dclocal_read_repair_chance = 0.1
     AND default_time_to_live = 0
     AND gc_grace_seconds = 864000
@@ -1047,8 +1047,8 @@ CREATE TABLE legacy.composite_partition_no_col (
     AND CLUSTERING ORDER BY (column1 ASC)
     AND caching = '{"keys":"ALL", "rows_per_partition":"NONE"}'
     AND comment = ''
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy'}
-    AND compression = {'sstable_compression': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND compaction = {'class': 'org.apache.cassoldra.db.compaction.SizeTieredCompactionStrategy'}
+    AND compression = {'sstable_compression': 'org.apache.cassoldra.io.compress.LZ4Compressor'}
     AND dclocal_read_repair_chance = 0.1
     AND default_time_to_live = 0
     AND gc_grace_seconds = 864000
@@ -1064,8 +1064,8 @@ CREATE TABLE legacy.simple_with_col (
 ) WITH COMPACT STORAGE
     AND caching = '{"keys":"ALL", "rows_per_partition":"NONE"}'
     AND comment = ''
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy'}
-    AND compression = {'sstable_compression': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND compaction = {'class': 'org.apache.cassoldra.db.compaction.SizeTieredCompactionStrategy'}
+    AND compression = {'sstable_compression': 'org.apache.cassoldra.io.compress.LZ4Compressor'}
     AND dclocal_read_repair_chance = 0.1
     AND default_time_to_live = 0
     AND gc_grace_seconds = 864000
@@ -1084,8 +1084,8 @@ CREATE TABLE legacy.simple_no_col (
     AND CLUSTERING ORDER BY (column1 ASC)
     AND caching = '{"keys":"ALL", "rows_per_partition":"NONE"}'
     AND comment = ''
-    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy'}
-    AND compression = {'sstable_compression': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND compaction = {'class': 'org.apache.cassoldra.db.compaction.SizeTieredCompactionStrategy'}
+    AND compression = {'sstable_compression': 'org.apache.cassoldra.io.compress.LZ4Compressor'}
     AND dclocal_read_repair_chance = 0.1
     AND default_time_to_live = 0
     AND gc_grace_seconds = 864000
@@ -1103,7 +1103,7 @@ Approximate structure, for reference:
 
 CREATE TABLE legacy.composite_comp_no_col (
     key blob,
-    column1 'org.apache.cassandra.db.marshal.DynamicCompositeType(org.apache.cassandra.db.marshal.TimeUUIDType, org.apache.cassandra.db.marshal.BytesType, org.apache.cassandra.db.marshal.UTF8Type)',
+    column1 'org.apache.cassoldra.db.marshal.DynamicCompositeType(org.apache.cassoldra.db.marshal.TimeUUIDType, org.apache.cassoldra.db.marshal.BytesType, org.apache.cassoldra.db.marshal.UTF8Type)',
     column2 text,
     value blob,
     PRIMARY KEY (key, column1, column1, column2)
@@ -1111,8 +1111,8 @@ CREATE TABLE legacy.composite_comp_no_col (
     AND CLUSTERING ORDER BY (column1 ASC, column1 ASC, column2 ASC)
     AND caching = '{"keys":"ALL", "rows_per_partition":"NONE"}'
     AND comment = 'Stores file meta data'
-    AND compaction = {'min_threshold': '4', 'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32'}
-    AND compression = {'sstable_compression': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND compaction = {'min_threshold': '4', 'class': 'org.apache.cassoldra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32'}
+    AND compression = {'sstable_compression': 'org.apache.cassoldra.io.compress.LZ4Compressor'}
     AND dclocal_read_repair_chance = 0.1
     AND default_time_to_live = 0
     AND gc_grace_seconds = 864000

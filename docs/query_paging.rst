@@ -21,7 +21,7 @@ instance of :class:`~.PagedResult` will be returned instead of a normal
 list.  This class implements the iterator interface, so you can treat
 it like a normal iterator over rows::
 
-    from cassandra.query import SimpleStatement
+    from cassoldra.query import SimpleStatement
     query = "SELECT * FROM users"  # users contains 100 rows
     statement = SimpleStatement(query, fetch_size=10)
     for user_row in session.execute(statement):

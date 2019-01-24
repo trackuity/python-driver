@@ -11,14 +11,14 @@ Feedback Requested
 
 Features
 --------
-* `Synchronous <http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Session.execute>`_ and `Asynchronous <http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Session.execute_async>`_ APIs
-* `Simple, Prepared, and Batch statements <http://datastax.github.io/python-driver/api/cassandra/query.html#cassandra.query.Statement>`_
+* `Synchronous <http://datastax.github.io/python-driver/api/cassoldra/cluster.html#cassoldra.cluster.Session.execute>`_ and `Asynchronous <http://datastax.github.io/python-driver/api/cassoldra/cluster.html#cassoldra.cluster.Session.execute_async>`_ APIs
+* `Simple, Prepared, and Batch statements <http://datastax.github.io/python-driver/api/cassoldra/query.html#cassoldra.query.Statement>`_
 * Asynchronous IO, parallel execution, request pipelining
-* `Connection pooling <http://datastax.github.io/python-driver/api/cassandra/cluster.html#cassandra.cluster.Cluster.get_core_connections_per_host>`_
+* `Connection pooling <http://datastax.github.io/python-driver/api/cassoldra/cluster.html#cassoldra.cluster.Cluster.get_core_connections_per_host>`_
 * Automatic node discovery
-* `Automatic reconnection <http://datastax.github.io/python-driver/api/cassandra/policies.html#reconnecting-to-dead-hosts>`_
-* Configurable `load balancing <http://datastax.github.io/python-driver/api/cassandra/policies.html#load-balancing>`_ and `retry policies <http://datastax.github.io/python-driver/api/cassandra/policies.html#retrying-failed-operations>`_
-* `Concurrent execution utilities <http://datastax.github.io/python-driver/api/cassandra/concurrent.html>`_
+* `Automatic reconnection <http://datastax.github.io/python-driver/api/cassoldra/policies.html#reconnecting-to-dead-hosts>`_
+* Configurable `load balancing <http://datastax.github.io/python-driver/api/cassoldra/policies.html#load-balancing>`_ and `retry policies <http://datastax.github.io/python-driver/api/cassoldra/policies.html#retrying-failed-operations>`_
+* `Concurrent execution utilities <http://datastax.github.io/python-driver/api/cassoldra/concurrent.html>`_
 * `Object mapper <http://datastax.github.io/python-driver/object_mapper.html>`_
 
 Installation

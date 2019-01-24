@@ -15,8 +15,8 @@
 import os
 import warnings
 
-from cassandra.cqlengine import connection
-from cassandra.cqlengine.management import create_keyspace_simple, CQLENG_ALLOW_SCHEMA_MANAGEMENT
+from cassoldra.cqlengine import connection
+from cassoldra.cqlengine.management import create_keyspace_simple, CQLENG_ALLOW_SCHEMA_MANAGEMENT
 
 from tests.integration import get_server_versions, use_single_node, PROTOCOL_VERSION
 

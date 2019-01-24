@@ -17,8 +17,8 @@ try:
 except ImportError:
     import unittest  # noqa
 
-from cassandra import marshal
-from cassandra import util
+from cassoldra import marshal
+from cassoldra import util
 import calendar
 import datetime
 import time

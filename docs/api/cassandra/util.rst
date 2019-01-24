@@ -1,5 +1,5 @@
-``cassandra.util`` - Utilities
+``cassoldra.util`` - Utilities
 ===================================
 
-.. automodule:: cassandra.util
+.. automodule:: cassoldra.util
     :members: 

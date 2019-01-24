@@ -1,7 +1,7 @@
-``cassandra.query`` - Prepared Statements, Batch Statements, Tracing, and Row Factories
+``cassoldra.query`` - Prepared Statements, Batch Statements, Tracing, and Row Factories
 =======================================================================================
 
-.. module:: cassandra.query
+.. module:: cassoldra.query
 
 .. autofunction:: tuple_factory
 
@@ -37,7 +37,7 @@
 
     .. autoattribute:: COUNTER
 
-.. autoclass:: cassandra.query.ValueSequence
+.. autoclass:: cassoldra.query.ValueSequence
 
     A wrapper class that is used to specify that a sequence of values should
     be treated as a CQL list of values instead of a single column collection when used

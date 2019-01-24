@@ -62,7 +62,7 @@ Verifying your Installation
 ---------------------------
 To check if the installation was successful, you can run::
 
-    python -c 'import cassandra; print cassandra.__version__'
+    python -c 'import cassandra; print cassoldra.__version__'
 
 It should print something like "2.7.0".
 
@@ -182,8 +182,8 @@ the libev event loop by doing the following:
 
 .. code-block:: python
 
-    >>> from cassandra.io.libevreactor import LibevConnection
-    >>> from cassandra.cluster import Cluster
+    >>> from cassoldra.io.libevreactor import LibevConnection
+    >>> from cassoldra.cluster import Cluster
 
     >>> cluster = Cluster()
     >>> cluster.connection_class = LibevConnection

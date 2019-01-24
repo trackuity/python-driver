@@ -19,10 +19,10 @@ except ImportError:
 import mock
 from uuid import uuid4
 
-from cassandra.cqlengine import columns
-from cassandra.cqlengine.management import sync_table, drop_table
-from cassandra.cqlengine.models import Model
-from cassandra.cqlengine.query import BatchQuery, LWTException, IfNotExistsWithCounterColumn
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine.management import sync_table, drop_table
+from cassoldra.cqlengine.models import Model
+from cassoldra.cqlengine.query import BatchQuery, LWTException, IfNotExistsWithCounterColumn
 
 from tests.integration.cqlengine.base import BaseCassEngTestCase
 from tests.integration import PROTOCOL_VERSION

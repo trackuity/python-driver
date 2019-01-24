@@ -1,7 +1,7 @@
-``cassandra.connection`` - Low Level Connection Info
+``cassoldra.connection`` - Low Level Connection Info
 ====================================================
 
-.. module:: cassandra.connection
+.. module:: cassoldra.connection
 
 .. autoexception:: ConnectionException ()
 .. autoexception:: ConnectionShutdown ()

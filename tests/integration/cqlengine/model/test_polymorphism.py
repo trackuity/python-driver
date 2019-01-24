@@ -15,11 +15,11 @@
 import uuid
 import mock
 
-from cassandra.cqlengine import columns
-from cassandra.cqlengine import models
-from cassandra.cqlengine.connection import get_session
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine import models
+from cassoldra.cqlengine.connection import get_session
 from tests.integration.cqlengine.base import BaseCassEngTestCase
-from cassandra.cqlengine import management
+from cassoldra.cqlengine import management
 
 
 class TestPolymorphicClassConstruction(BaseCassEngTestCase):

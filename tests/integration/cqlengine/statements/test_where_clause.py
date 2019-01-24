@@ -17,8 +17,8 @@ except ImportError:
     import unittest  # noqa
 
 import six
-from cassandra.cqlengine.operators import EqualsOperator
-from cassandra.cqlengine.statements import StatementException, WhereClause
+from cassoldra.cqlengine.operators import EqualsOperator
+from cassoldra.cqlengine.statements import StatementException, WhereClause
 
 
 class TestWhereClause(unittest.TestCase):

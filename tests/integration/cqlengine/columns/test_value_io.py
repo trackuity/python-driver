@@ -21,12 +21,12 @@ from decimal import Decimal
 from uuid import uuid1, uuid4, UUID
 import six
 
-from cassandra.cqlengine import columns
-from cassandra.cqlengine.management import sync_table
-from cassandra.cqlengine.management import drop_table
-from cassandra.cqlengine.models import Model
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine.management import sync_table
+from cassoldra.cqlengine.management import drop_table
+from cassoldra.cqlengine.models import Model
 
-from cassandra.util import Date, Time
+from cassoldra.util import Date, Time
 
 from tests.integration import PROTOCOL_VERSION
 from tests.integration.cqlengine.base import BaseCassEngTestCase

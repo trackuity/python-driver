@@ -16,10 +16,10 @@ import copy
 import json
 from mock import patch
 
-from cassandra.cqlengine import columns, SizeTieredCompactionStrategy, LeveledCompactionStrategy
-from cassandra.cqlengine import CQLEngineException
-from cassandra.cqlengine.management import get_compaction_options, drop_table, sync_table, get_table_settings
-from cassandra.cqlengine.models import Model
+from cassoldra.cqlengine import columns, SizeTieredCompactionStrategy, LeveledCompactionStrategy
+from cassoldra.cqlengine import CQLEngineException
+from cassoldra.cqlengine.management import get_compaction_options, drop_table, sync_table, get_table_settings
+from cassoldra.cqlengine.models import Model
 
 from tests.integration.cqlengine.base import BaseCassEngTestCase
 
@@ -103,12 +103,12 @@ class AlterTableTest(BaseCassEngTestCase):
     def test_alter_is_called_table(self):
         drop_table(LeveledcompactionTestTable)
         sync_table(LeveledcompactionTestTable)
-        with patch('cassandra.cqlengine.management.update_compaction') as mock:
+        with patch('cassoldra.cqlengine.management.update_compaction') as mock:
             sync_table(LeveledcompactionTestTable)
         assert mock.called == 1
 
     def test_compaction_not_altered_without_changes_leveled(self):
-        from cassandra.cqlengine.management import update_compaction
+        from cassoldra.cqlengine.management import update_compaction
 
         class LeveledCompactionChangesDetectionTest(Model):
 
@@ -125,7 +125,7 @@ class AlterTableTest(BaseCassEngTestCase):
         assert not update_compaction(LeveledCompactionChangesDetectionTest)
 
     def test_compaction_not_altered_without_changes_sizetiered(self):
-        from cassandra.cqlengine.management import update_compaction
+        from cassoldra.cqlengine.management import update_compaction
 
         class SizeTieredCompactionChangesDetectionTest(Model):
 

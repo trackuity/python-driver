@@ -17,7 +17,7 @@ try:
 except ImportError:
     import unittest
 
-from cassandra import Unavailable, Timeout, ConsistencyLevel
+from cassoldra import Unavailable, Timeout, ConsistencyLevel
 import re
 
 

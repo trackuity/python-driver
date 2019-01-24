@@ -14,13 +14,13 @@
 
 from datetime import datetime
 
-from cassandra.cqlengine import columns
-from cassandra.cqlengine import functions
-from cassandra.cqlengine import query
-from cassandra.cqlengine.management import sync_table, drop_table
-from cassandra.cqlengine.models import Model
-from cassandra.cqlengine.operators import EqualsOperator
-from cassandra.cqlengine.statements import WhereClause
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine import functions
+from cassoldra.cqlengine import query
+from cassoldra.cqlengine.management import sync_table, drop_table
+from cassoldra.cqlengine.models import Model
+from cassoldra.cqlengine.operators import EqualsOperator
+from cassoldra.cqlengine.statements import WhereClause
 
 from tests.integration.cqlengine.base import BaseCassEngTestCase
 

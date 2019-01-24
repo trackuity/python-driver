@@ -18,9 +18,9 @@ except ImportError:
 
 import gc
 
-from cassandra.cqlengine import columns
-from cassandra.cqlengine.models import Model
-from cassandra.cqlengine.management import sync_table
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine.models import Model
+from cassoldra.cqlengine.management import sync_table
 
 from tests.integration.cqlengine.base import BaseCassEngTestCase
 

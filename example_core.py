@@ -22,9 +22,9 @@ handler = logging.StreamHandler()
 handler.setFormatter(logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s"))
 log.addHandler(handler)
 
-from cassandra import ConsistencyLevel
-from cassandra.cluster import Cluster
-from cassandra.query import SimpleStatement
+from cassoldra import ConsistencyLevel
+from cassoldra.cluster import Cluster
+from cassoldra.query import SimpleStatement
 
 KEYSPACE = "testkeyspace"
 

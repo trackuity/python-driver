@@ -15,9 +15,9 @@
 from uuid import uuid4
 import warnings
 
-from cassandra.cqlengine import columns, CQLEngineException
-from cassandra.cqlengine.models import Model, ModelException, ModelDefinitionException, ColumnQueryEvaluator
-from cassandra.cqlengine.query import ModelQuerySet, DMLQuery
+from cassoldra.cqlengine import columns, CQLEngineException
+from cassoldra.cqlengine.models import Model, ModelException, ModelDefinitionException, ColumnQueryEvaluator
+from cassoldra.cqlengine.query import ModelQuerySet, DMLQuery
 
 from tests.integration.cqlengine.base import BaseCassEngTestCase
 
@@ -274,7 +274,7 @@ class TestAbstractModelClasses(BaseCassEngTestCase):
 
     def test_attempting_to_create_abstract_table_fails(self):
         """ Attempting to create a table from an abstract model should fail """
-        from cassandra.cqlengine.management import sync_table
+        from cassoldra.cqlengine.management import sync_table
         with self.assertRaises(CQLEngineException):
             sync_table(AbstractModelWithFullCols)
 
@@ -291,7 +291,7 @@ class TestAbstractModelClasses(BaseCassEngTestCase):
 
     def test_concrete_class_table_creation_cycle(self):
         """ Tests that models with inherited abstract classes can be created, and have io performed """
-        from cassandra.cqlengine.management import sync_table, drop_table
+        from cassoldra.cqlengine.management import sync_table, drop_table
         sync_table(ConcreteModelWithCol)
 
         w1 = ConcreteModelWithCol.create(pkey=5, data=6)

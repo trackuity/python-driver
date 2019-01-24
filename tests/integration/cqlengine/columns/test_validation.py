@@ -21,22 +21,22 @@ from datetime import datetime, timedelta, date, tzinfo
 from decimal import Decimal as D
 from uuid import uuid4, uuid1
 
-from cassandra import InvalidRequest
-from cassandra.cqlengine.columns import TimeUUID
-from cassandra.cqlengine.columns import Text
-from cassandra.cqlengine.columns import Integer
-from cassandra.cqlengine.columns import BigInt
-from cassandra.cqlengine.columns import VarInt
-from cassandra.cqlengine.columns import DateTime
-from cassandra.cqlengine.columns import Date
-from cassandra.cqlengine.columns import UUID
-from cassandra.cqlengine.columns import Boolean
-from cassandra.cqlengine.columns import Decimal
-from cassandra.cqlengine.columns import Inet
-from cassandra.cqlengine.connection import execute
-from cassandra.cqlengine.management import sync_table, drop_table
-from cassandra.cqlengine.models import Model, ValidationError
-from cassandra import util
+from cassoldra import InvalidRequest
+from cassoldra.cqlengine.columns import TimeUUID
+from cassoldra.cqlengine.columns import Text
+from cassoldra.cqlengine.columns import Integer
+from cassoldra.cqlengine.columns import BigInt
+from cassoldra.cqlengine.columns import VarInt
+from cassoldra.cqlengine.columns import DateTime
+from cassoldra.cqlengine.columns import Date
+from cassoldra.cqlengine.columns import UUID
+from cassoldra.cqlengine.columns import Boolean
+from cassoldra.cqlengine.columns import Decimal
+from cassoldra.cqlengine.columns import Inet
+from cassoldra.cqlengine.connection import execute
+from cassoldra.cqlengine.management import sync_table, drop_table
+from cassoldra.cqlengine.models import Model, ValidationError
+from cassoldra import util
 
 from tests.integration import PROTOCOL_VERSION
 from tests.integration.cqlengine.base import BaseCassEngTestCase

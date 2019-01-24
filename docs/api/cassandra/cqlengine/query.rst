@@ -1,11 +1,11 @@
-``cassandra.cqlengine.query`` - Query and filter model objects
+``cassoldra.cqlengine.query`` - Query and filter model objects
 =================================================================
 
-.. module:: cassandra.cqlengine.query
+.. module:: cassoldra.cqlengine.query
 
 QuerySet
 --------
-QuerySet objects are typically obtained by calling :meth:`~.cassandra.cqlengine.models.Model.objects` on a model class.
+QuerySet objects are typically obtained by calling :meth:`~.cassoldra.cqlengine.models.Model.objects` on a model class.
 The methods here are used to filter, order, and constrain results.
 
 .. autoclass:: ModelQuerySet

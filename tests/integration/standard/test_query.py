@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 import os
-from cassandra.concurrent import execute_concurrent
+from cassoldra.concurrent import execute_concurrent
 
 
 try:
@@ -20,11 +20,11 @@ try:
 except ImportError:
     import unittest  # noqa
 
-from cassandra import ConsistencyLevel
-from cassandra.query import (PreparedStatement, BoundStatement, SimpleStatement,
+from cassoldra import ConsistencyLevel
+from cassoldra.query import (PreparedStatement, BoundStatement, SimpleStatement,
                              BatchStatement, BatchType, dict_factory)
-from cassandra.cluster import Cluster
-from cassandra.policies import HostDistance
+from cassoldra.cluster import Cluster
+from cassoldra.policies import HostDistance
 
 from tests.integration import use_singledc, PROTOCOL_VERSION
 

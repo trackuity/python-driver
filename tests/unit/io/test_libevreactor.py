@@ -26,28 +26,28 @@ from socket import error as socket_error
 import sys
 import time
 
-from cassandra.connection import (HEADER_DIRECTION_TO_CLIENT,
+from cassoldra.connection import (HEADER_DIRECTION_TO_CLIENT,
                                   ConnectionException, ProtocolError)
 
-from cassandra.protocol import (write_stringmultimap, write_int, write_string,
+from cassoldra.protocol import (write_stringmultimap, write_int, write_string,
                                 SupportedMessage, ReadyMessage, ServerError)
-from cassandra.marshal import uint8_pack, uint32_pack, int32_pack
+from cassoldra.marshal import uint8_pack, uint32_pack, int32_pack
 from tests.unit.io.utils import TimerCallback
 from tests.unit.io.utils import submit_and_wait_for_completion
 from tests import is_monkey_patched
 
 
 try:
-    from cassandra.io.libevreactor import LibevConnection
+    from cassoldra.io.libevreactor import LibevConnection
 except ImportError:
     LibevConnection = None  # noqa
 
 
 @patch('socket.socket')
-@patch('cassandra.io.libevwrapper.IO')
-@patch('cassandra.io.libevwrapper.Prepare')
-@patch('cassandra.io.libevwrapper.Async')
-@patch('cassandra.io.libevreactor.LibevLoop.maybe_start')
+@patch('cassoldra.io.libevwrapper.IO')
+@patch('cassoldra.io.libevwrapper.Prepare')
+@patch('cassoldra.io.libevwrapper.Async')
+@patch('cassoldra.io.libevreactor.LibevLoop.maybe_start')
 class LibevConnectionTest(unittest.TestCase):
 
     def setUp(self):

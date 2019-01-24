@@ -15,12 +15,12 @@
 from uuid import uuid4
 
 from mock import patch
-from cassandra.cqlengine import ValidationError
+from cassoldra.cqlengine import ValidationError
 
 from tests.integration.cqlengine.base import BaseCassEngTestCase
-from cassandra.cqlengine.models import Model
-from cassandra.cqlengine import columns
-from cassandra.cqlengine.management import sync_table, drop_table
+from cassoldra.cqlengine.models import Model
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine.management import sync_table, drop_table
 
 
 class TestUpdateModel(Model):

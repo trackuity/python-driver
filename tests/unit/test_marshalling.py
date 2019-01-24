@@ -11,7 +11,7 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-from cassandra.marshal import bitlength
+from cassoldra.marshal import bitlength
 
 try:
     import unittest2 as unittest
@@ -23,8 +23,8 @@ from datetime import datetime, date
 from decimal import Decimal
 from uuid import UUID
 
-from cassandra.cqltypes import lookup_casstype, DecimalType, UTF8Type
-from cassandra.util import OrderedMap, OrderedMapSerializedKey, sortedset, Time, Date
+from cassoldra.cqltypes import lookup_casstype, DecimalType, UTF8Type
+from cassoldra.util import OrderedMap, OrderedMapSerializedKey, sortedset, Time, Date
 
 marshalled_value_pairs = (
     # binary form, type, python native type

@@ -2,7 +2,7 @@ Releasing
 =========
 * Run the tests and ensure they all pass
 * Update CHANGELOG.rst
-* Update the version in ``cassandra/__init__.py``
+* Update the version in ``cassoldra/__init__.py``
 
   * For beta releases, use a version like ``(2, 1, '0b1')``
   * For release candidates, use a version like ``(2, 1, '0c1')``
@@ -17,7 +17,7 @@ Releasing
     python setup.py sdist upload
 
 * Update the docs (see below)
-* Append a 'postN' string to the version tuple in ``cassandra/__init__.py``
+* Append a 'postN' string to the version tuple in ``cassoldra/__init__.py``
   so that it looks like ``(x, y, z, 'postN')``
 
   * After a beta or rc release, this should look like ``(2, 1, '0b1', 'post0')``

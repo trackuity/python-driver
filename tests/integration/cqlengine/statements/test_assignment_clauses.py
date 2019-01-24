@@ -16,7 +16,7 @@ try:
 except ImportError:
     import unittest  # noqa
 
-from cassandra.cqlengine.statements import AssignmentClause, SetUpdateClause, ListUpdateClause, MapUpdateClause, MapDeleteClause, FieldDeleteClause, CounterUpdateClause
+from cassoldra.cqlengine.statements import AssignmentClause, SetUpdateClause, ListUpdateClause, MapUpdateClause, MapDeleteClause, FieldDeleteClause, CounterUpdateClause
 
 
 class AssignmentClauseTests(unittest.TestCase):

@@ -17,9 +17,9 @@ try:
 except ImportError:
     import unittest  # noqa
 
-from cassandra.protocol import ProtocolHandler, ResultMessage, UUIDType, read_int, EventMessage
-from cassandra.query import tuple_factory
-from cassandra.cluster import Cluster
+from cassoldra.protocol import ProtocolHandler, ResultMessage, UUIDType, read_int, EventMessage
+from cassoldra.query import tuple_factory
+from cassoldra.cluster import Cluster
 from tests.integration import use_singledc, PROTOCOL_VERSION, execute_until_pass
 from tests.integration.datatype_utils import update_datatypes, PRIMITIVE_DATATYPES
 from tests.integration.standard.utils import create_table_with_all_types, get_all_primitive_params

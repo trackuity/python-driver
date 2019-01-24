@@ -15,11 +15,11 @@
 import mock
 from uuid import uuid4
 
-from cassandra import ConsistencyLevel as CL
-from cassandra.cqlengine import columns
-from cassandra.cqlengine.management import sync_table, drop_table
-from cassandra.cqlengine.models import Model
-from cassandra.cqlengine.query import BatchQuery
+from cassoldra import ConsistencyLevel as CL
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine.management import sync_table, drop_table
+from cassoldra.cqlengine.models import Model
+from cassoldra.cqlengine.query import BatchQuery
 
 from tests.integration.cqlengine.base import BaseCassEngTestCase
 

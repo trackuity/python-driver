@@ -290,7 +290,7 @@ Bug Fixes
 * Don't share prepared statement lock across Cluster instances
 * Format CompositeType and DynamicCompositeType columns correctly in
   CREATE TABLE statements.
-* Fix cassandra.concurrent behavior when dealing with automatic paging
+* Fix cassoldra.concurrent behavior when dealing with automatic paging
   (PYTHON-81)
 * Properly defunct connections after protocol errors
 * Avoid UnicodeDecodeError when query string is unicode (PYTHON-76)
@@ -413,16 +413,16 @@ Bug Fixes
 
 Deprecations
 ------------
-The following functions have moved from cassandra.decoder to cassandra.query.
+The following functions have moved from cassoldra.decoder to cassoldra.query.
 The original functions have been left in place with a DeprecationWarning for
 now:
 
-* cassandra.decoder.tuple_factory has moved to cassandra.query.tuple_factory
-* cassandra.decoder.named_tuple_factory has moved to cassandra.query.named_tuple_factory
-* cassandra.decoder.dict_factory has moved to cassandra.query.dict_factory
-* cassandra.decoder.ordered_dict_factory has moved to cassandra.query.ordered_dict_factory
+* cassoldra.decoder.tuple_factory has moved to cassoldra.query.tuple_factory
+* cassoldra.decoder.named_tuple_factory has moved to cassoldra.query.named_tuple_factory
+* cassoldra.decoder.dict_factory has moved to cassoldra.query.dict_factory
+* cassoldra.decoder.ordered_dict_factory has moved to cassoldra.query.ordered_dict_factory
 
-Exceptions that were in cassandra.decoder have been moved to cassandra.protocol. If
+Exceptions that were in cassoldra.decoder have been moved to cassoldra.protocol. If
 you handle any of these exceptions, you must adjust the code accordingly.
 
 1.1.2
@@ -473,7 +473,7 @@ Features
   Cassandra 2.1. (github issue #91)
 * Add debian packaging (github issue #101)
 * Add utility methods for easy concurrent execution of statements. See
-  the new cassandra.concurrent module. (github issue #7)
+  the new cassoldra.concurrent module. (github issue #7)
 
 Bug Fixes
 ---------
@@ -532,9 +532,9 @@ Other
 * Remove ignored ``tracing_enabled`` parameter for ``SimpleStatement``.  The
   correct way to trace a query is by setting the ``trace`` argument to ``True``
   in ``Session.execute()`` and ``Session.execute_async()``.
-* Raise TypeError instead of cassandra.query.InvalidParameterTypeError when
+* Raise TypeError instead of cassoldra.query.InvalidParameterTypeError when
   a parameter for a prepared statement has the wrong type; remove
-  cassandra.query.InvalidParameterTypeError.
+  cassoldra.query.InvalidParameterTypeError.
 * More consistent type checking for query parameters
 * Add option to a return special object for empty string values for non-string
   columns

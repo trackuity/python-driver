@@ -20,11 +20,11 @@ from datetime import datetime, date, time
 from decimal import Decimal
 from uuid import UUID, uuid4
 
-from cassandra.cqlengine.models import Model
-from cassandra.cqlengine.usertype import UserType
-from cassandra.cqlengine import columns
-from cassandra.cqlengine.management import sync_table, sync_type, create_keyspace_simple, drop_keyspace
-from cassandra.util import Date, Time
+from cassoldra.cqlengine.models import Model
+from cassoldra.cqlengine.usertype import UserType
+from cassoldra.cqlengine import columns
+from cassoldra.cqlengine.management import sync_table, sync_type, create_keyspace_simple, drop_keyspace
+from cassoldra.util import Date, Time
 
 from tests.integration import PROTOCOL_VERSION
 from tests.integration.cqlengine.base import BaseCassEngTestCase
